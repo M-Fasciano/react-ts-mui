@@ -3,6 +3,6 @@ import Button from "./Button";
 
 describe("Button Component Tests", () => {
   it("Renders correctly in DOM", () => {
-    <Button label={"Hello world"} />;
+    <Button label={"Hello world"} type="button" />;
   });
 });

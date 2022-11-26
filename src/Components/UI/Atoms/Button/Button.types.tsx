@@ -19,4 +19,8 @@ export interface ButtonProps {
    * Optional click handler
    */
   onClick?: () => void;
+  /**
+   * Button type
+   */
+  type: "button" | "reset" | "submit";
 }
