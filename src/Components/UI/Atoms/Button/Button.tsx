@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledButton } from "./Button.styles";
+import { StyledButton } from "./Button.style";
 import { ButtonProps } from "./Button.types";
 
 /**
@@ -7,9 +7,9 @@ import { ButtonProps } from "./Button.types";
  */
 const Button = ({
   primary = false,
-  size = "medium",
   backgroundColor,
   label,
+  type,
   ...props
 }: ButtonProps) => {
   const mode = primary
@@ -17,10 +17,8 @@ const Button = ({
     : "storybook-button--secondary";
   return (
     <StyledButton
-      type="button"
-      className={["storybook-button", `storybook-button--${size}`, mode].join(
-        " "
-      )}
+      type={type}
+      className={["storybook-button", mode].join(" ")}
       style={{ backgroundColor }}
       {...props}
     >
