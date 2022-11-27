@@ -3,12 +3,13 @@ import { TextField as MuiTextField } from "@mui/material";
 
 type TextFieldProps = {
   id?: string;
-  label?: string;
+  label?: React.ReactNode;
   variant?: "filled" | "outlined" | "standard";
-  type?: string;
-  value?: any;
+  type?: React.InputHTMLAttributes<unknown>["type"];
+  value?: unknown;
   helperText?: React.ReactNode;
   inputProps?: object;
+  inputRef?: React.Ref<any>;
   error?: boolean;
   fullWidth?: boolean;
   required?: boolean;
@@ -23,6 +24,7 @@ const TextField = (props: TextFieldProps) => {
     value,
     helperText,
     inputProps,
+    inputRef,
     error,
     fullWidth,
     required,
@@ -36,6 +38,7 @@ const TextField = (props: TextFieldProps) => {
       value={value}
       helperText={helperText}
       inputProps={inputProps}
+      inputRef={inputRef}
       error={error}
       fullWidth={fullWidth}
       required={required}
