@@ -1,10 +1,10 @@
 import React from "react";
-import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Button from "../UI/atoms/Button";
 import TextField from "../UI/atoms/TextField";
 import { StyledFormWrapper } from "./SignUp.style";
+import { useYupValidationResolver } from "../../utils/validationResolver";
 
 interface IFormInputs {
   email: string;
@@ -13,28 +13,30 @@ interface IFormInputs {
   password: string;
 }
 
-const schema = yup
-  .object()
-  .shape({
-    email: yup.string().email().required(),
-    firstName: yup.string().required(),
-    lastName: yup.string().required(),
-    password: yup.string().required(),
-  })
-  .required();
+const validationSchema = yup.object().shape({
+  email: yup.string().required("Email is required").email("Email is invalid"),
+  firstName: yup.string().required("First name is required"),
+  lastName: yup.string().required("Last name is required"),
+  password: yup
+    .string()
+    .required("Password is required")
+    .min(6, "Password must be at least 6 characters")
+    .max(40, "Password must not exceed 40 characters"),
+});
 
-function SignUp() {
+const SignUp = () => {
+  const resolver = useYupValidationResolver(validationSchema);
+
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInputs>({
-    mode: "onBlur",
-    resolver: yupResolver(schema),
+    resolver,
   });
 
   const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-    console.log("hello");
+    console.log({ data });
   };
 
   return (
@@ -50,8 +52,6 @@ function SignUp() {
         noValidate
       >
         <Controller
-          name="email"
-          control={control}
           render={({
             field: { value, ref, ...rest },
             fieldState: { error },
@@ -59,22 +59,19 @@ function SignUp() {
             <TextField
               {...rest}
               inputRef={ref}
-              value={value}
               label="Email Address"
               variant="outlined"
               type="email"
               fullWidth
               required
               error={!!error}
-              helperText={
-                errors.email ? <span>This field is required</span> : ""
-              }
+              helperText={errors.email?.message}
             />
           )}
+          name="email"
+          control={control}
         />
         <Controller
-          name="firstName"
-          control={control}
           render={({
             field: { value, ref, ...rest },
             fieldState: { error },
@@ -82,22 +79,19 @@ function SignUp() {
             <TextField
               {...rest}
               inputRef={ref}
-              value={value}
               label="First Name"
               variant="outlined"
               fullWidth
               inputProps={{ maxLength: 20 }}
               required
               error={!!error}
-              helperText={
-                errors.firstName ? <span>This field is required</span> : ""
-              }
+              helperText={errors.firstName?.message}
             />
           )}
+          name="firstName"
+          control={control}
         />
         <Controller
-          name="lastName"
-          control={control}
           render={({
             field: { value, ref, ...rest },
             fieldState: { error },
@@ -105,22 +99,19 @@ function SignUp() {
             <TextField
               {...rest}
               inputRef={ref}
-              value={value}
               label="Last Name"
               variant="outlined"
               fullWidth
               inputProps={{ maxLength: 20 }}
               required
               error={!!error}
-              helperText={
-                errors.firstName ? <span>This field is required</span> : ""
-              }
+              helperText={errors.lastName?.message}
             />
           )}
+          name="lastName"
+          control={control}
         />
         <Controller
-          name="password"
-          control={control}
           render={({
             field: { value, ref, ...rest },
             fieldState: { error },
@@ -128,23 +119,22 @@ function SignUp() {
             <TextField
               {...rest}
               inputRef={ref}
-              value={value}
               label="Password"
               variant="outlined"
               type="password"
               fullWidth
               required
               error={!!error}
-              helperText={
-                errors.password ? <span>This field is required</span> : ""
-              }
+              helperText={errors.password?.message}
             />
           )}
+          name="password"
+          control={control}
         />
         <Button label={"Create an account"} primary type="submit" />
       </form>
     </StyledFormWrapper>
   );
-}
+};
 
 export default SignUp;

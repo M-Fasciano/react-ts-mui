@@ -13,6 +13,7 @@ type TextFieldProps = {
   error?: boolean;
   fullWidth?: boolean;
   required?: boolean;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
 const TextField = (props: TextFieldProps) => {
@@ -28,6 +29,7 @@ const TextField = (props: TextFieldProps) => {
     error,
     fullWidth,
     required,
+    onChange,
   } = props;
   return (
     <MuiTextField
@@ -42,6 +44,7 @@ const TextField = (props: TextFieldProps) => {
       error={error}
       fullWidth={fullWidth}
       required={required}
+      onChange={onChange}
     />
   );
 };

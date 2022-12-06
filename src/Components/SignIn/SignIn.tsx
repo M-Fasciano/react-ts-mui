@@ -1,25 +1,93 @@
 import React from "react";
-import { StyledFormWrapper } from "../SignUp/SignUp.style";
+import * as yup from "yup";
+import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Button from "../UI/atoms/Button";
 import TextField from "../UI/atoms/TextField";
+import { StyledFormWrapper } from "./SignIn.style";
+import { useYupValidationResolver } from "../../utils/validationResolver";
 
-function SignIn() {
+interface IFormInputs {
+  email: string;
+  password: string;
+}
+
+const validationSchema = yup.object().shape({
+  email: yup.string().required("Email is required").email("Email is invalid"),
+  password: yup
+    .string()
+    .required("Password is required")
+    .min(6, "Password must be at least 6 characters")
+    .max(40, "Password must not exceed 40 characters"),
+});
+
+const SignUp = () => {
+  const resolver = useYupValidationResolver(validationSchema);
+
+  const {
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IFormInputs>({
+    resolver,
+  });
+
+  const onSubmit: SubmitHandler<IFormInputs> = (data) => {
+    console.log({ data });
+  };
+
   return (
     <StyledFormWrapper>
       <h1>Sign in</h1>
       <p>Sign in with your Vision Direct account</p>
-      <form className="sign-up-form" noValidate>
-        <TextField
-          label="Email Address"
-          variant="outlined"
-          fullWidth
-          required
+      <form
+        className="sign-in-form"
+        onSubmit={handleSubmit(onSubmit)}
+        noValidate
+      >
+        <Controller
+          render={({
+            field: { value, ref, ...rest },
+            fieldState: { error },
+          }) => (
+            <TextField
+              {...rest}
+              inputRef={ref}
+              label="Email Address"
+              variant="outlined"
+              type="email"
+              fullWidth
+              required
+              error={!!error}
+              helperText={errors.email?.message}
+            />
+          )}
+          name="email"
+          control={control}
         />
-        <TextField label="Password" variant="outlined" fullWidth required />
-        <Button label={"Sign in"} primary type="button" />
+        <Controller
+          render={({
+            field: { value, ref, ...rest },
+            fieldState: { error },
+          }) => (
+            <TextField
+              {...rest}
+              inputRef={ref}
+              label="Password"
+              variant="outlined"
+              type="password"
+              fullWidth
+              required
+              error={!!error}
+              helperText={errors.password?.message}
+            />
+          )}
+          name="password"
+          control={control}
+        />
+        <Button label={"Sign in"} primary type="submit" />
       </form>
     </StyledFormWrapper>
   );
-}
+};
 
-export default SignIn;
+export default SignUp;
