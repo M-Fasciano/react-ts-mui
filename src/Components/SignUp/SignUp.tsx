@@ -1,37 +1,28 @@
 import React from "react";
-import * as yup from "yup";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Button from "../UI/atoms/Button";
 import TextField from "../UI/atoms/TextField";
 import { StyledFormWrapper } from "./SignUp.style";
 import { useYupValidationResolver } from "../../utils/validationResolver";
-
-interface IFormInputs {
-  email: string;
-  firstName: string;
-  lastName: string;
-  password: string;
-}
-
-const validationSchema = yup.object().shape({
-  email: yup.string().required("Email is required").email("Email is invalid"),
-  firstName: yup.string().required("First name is required"),
-  lastName: yup.string().required("Last name is required"),
-  password: yup
-    .string()
-    .required("Password is required")
-    .min(6, "Password must be at least 6 characters")
-    .max(40, "Password must not exceed 40 characters"),
-});
+import {
+  validationSchemaSignUp,
+  IFormInputs,
+  SIGN_UP_FORM_FIELDS,
+} from "../../constant/forms";
 
 const SignUp = () => {
-  const resolver = useYupValidationResolver(validationSchema);
+  const resolver = useYupValidationResolver(
+    validationSchemaSignUp({
+      formFields: SIGN_UP_FORM_FIELDS,
+    })
+  );
 
   const {
     control,
     handleSubmit,
     formState: { errors },
   } = useForm<IFormInputs>({
+    mode: "onBlur",
     resolver,
   });
 

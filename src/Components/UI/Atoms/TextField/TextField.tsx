@@ -14,6 +14,7 @@ type TextFieldProps = {
   fullWidth?: boolean;
   required?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 };
 
 const TextField = (props: TextFieldProps) => {
@@ -30,6 +31,7 @@ const TextField = (props: TextFieldProps) => {
     fullWidth,
     required,
     onChange,
+    onBlur,
   } = props;
   return (
     <MuiTextField
@@ -45,6 +47,7 @@ const TextField = (props: TextFieldProps) => {
       fullWidth={fullWidth}
       required={required}
       onChange={onChange}
+      onBlur={onBlur}
     />
   );
 };
