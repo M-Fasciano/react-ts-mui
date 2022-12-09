@@ -7,15 +7,10 @@ import { useYupValidationResolver } from "../../utils/validationResolver";
 import {
   validationSchemaSignUp,
   IFormInputs,
-  SIGN_UP_FORM_FIELDS,
-} from "../../constant/forms";
+} from "../../constant/formsValidation";
 
 const SignUp = () => {
-  const resolver = useYupValidationResolver(
-    validationSchemaSignUp({
-      formFields: SIGN_UP_FORM_FIELDS,
-    })
-  );
+  const resolver = useYupValidationResolver(validationSchemaSignUp);
 
   const {
     control,
