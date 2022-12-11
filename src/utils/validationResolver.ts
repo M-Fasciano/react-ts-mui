@@ -1,5 +1,6 @@
 import { useCallback } from 'react'
 
+// https://react-hook-form.com/advanced-usage#CustomHookwithResolver
 export const useYupValidationResolver = (validationSchema: any) =>
   useCallback(
     async (data: any) => {
