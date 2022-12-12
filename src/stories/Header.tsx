@@ -1,6 +1,6 @@
 import React from "react";
 
-import Button from "../Components/UI/atoms/Button/Button";
+import Button from "../components/atoms/Button/Button";
 import "./header.css";
 
 type User = {

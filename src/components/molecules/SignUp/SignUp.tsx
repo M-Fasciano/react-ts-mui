@@ -1,13 +1,12 @@
-import React from "react";
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
-import Button from "../UI/atoms/Button";
-import TextField from "../UI/atoms/TextField";
+import Button from "../../atoms/Button";
+import TextField from "../../atoms/TextField";
 import { StyledFormWrapper } from "./SignUp.style";
-import { useYupValidationResolver } from "../../utils/validationResolver";
+import { useYupValidationResolver } from "../../../utils/validationResolver";
 import {
   validationSchemaSignUp,
   IFormInputs,
-} from "../../constant/formsValidation";
+} from "../../../constant/formsValidation";
 
 const SignUp = () => {
   const resolver = useYupValidationResolver(validationSchemaSignUp);
