@@ -4,10 +4,11 @@ import styled from "styled-components";
 
 const StyledWrapper = styled("div")`
   display: flex;
+  flex-direction: column;
   width: 100%;
 
-  .container {
-    width: 50%;
+  @media (min-width: 1024px) {
+    flex-direction: row;
   }
 `;
 

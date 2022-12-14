@@ -5,7 +5,10 @@ export const StyledFormWrapper = styled("div")`
   flex-direction: column;
   gap: 16px;
   margin: 2rem;
-  width: 50%;
+
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
 
   .sign-in-form {
     display: flex;
