@@ -1,4 +1,3 @@
-import React from "react";
 import ReactPlayer from "react-player/wistia";
 import { StyledVideoWrapper } from "./WistiaReactPlayer.styles";
 
