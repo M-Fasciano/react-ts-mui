@@ -1,1 +1,1 @@
-export { default } from "./WistisPlayerEmbed";
+export { default } from "./WistiaPlayerEmbed";
