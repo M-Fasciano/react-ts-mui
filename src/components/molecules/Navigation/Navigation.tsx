@@ -11,6 +11,9 @@ function Navigation() {
         <li className="list__item">
           <Link to="/video">Video</Link>
         </li>
+        <li className="list__item">
+          <Link to="/layout">Layout</Link>
+        </li>
       </ul>
     </StyledNav>
   );

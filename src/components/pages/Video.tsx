@@ -4,11 +4,19 @@ import styled from "styled-components";
 
 const StyledWrapper = styled("div")`
   display: flex;
+  flex-direction: column;
   width: 100%;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
 
   .container {
     margin: 2rem;
-    width: 50%;
+
+    @media (min-width: 1024px) {
+      width: 50%;
+    }
   }
 `;
 
