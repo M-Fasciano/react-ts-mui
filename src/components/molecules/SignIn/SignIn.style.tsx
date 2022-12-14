@@ -4,10 +4,13 @@ export const StyledFormWrapper = styled("div")`
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin: 3rem;
-  width: 50%;
+  margin: 2rem;
 
-  .sign-up-form {
+  @media (min-width: 1024px) {
+    width: 50%;
+  }
+
+  .sign-in-form {
     display: flex;
     flex-direction: column;
     gap: 32px;
