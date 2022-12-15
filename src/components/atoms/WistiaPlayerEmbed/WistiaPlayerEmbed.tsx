@@ -1,7 +1,13 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { StyledVideoWrapper } from "./WistiaPlayerEmbed.styles";
 
-const WistiaPlayerEmbed = (props) => {
+declare global {
+  interface Window {
+    _wq: any;
+  }
+}
+
+const WistiaPlayerEmbed = (props: any) => {
   const { videoId, ...embedOptions } = props;
   window._wq = window._wq || [];
   window._wq.push({
