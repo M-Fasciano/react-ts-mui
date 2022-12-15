@@ -1,5 +1,5 @@
-import WistiaPlayerEmbed from "../atoms/WistiaPlayerEmbed";
 import WistiaReactPlayer from "../atoms/WistiaReactPlayer";
+import WistiaPlayerEmbed from "../atoms/WistiaPlayerEmbed/WistiaPlayerEmbed";
 import styled from "styled-components";
 
 const StyledWrapper = styled("div")`
