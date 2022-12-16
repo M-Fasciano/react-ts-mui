@@ -1,37 +1,17 @@
-import { useState } from "react";
 import ReactPlayer from "react-player/wistia";
+import { VideoProps } from "../../pages/Video";
 import { StyledVideoWrapper } from "./WistiaReactPlayer.styles";
 
-type VideoProps = {
-  videoId: string;
-};
-
 function WistiaReactPlayer(props: VideoProps) {
-  const { videoId } = props;
+  const {
+    videoId,
+    state,
+    handleOnStart,
+    handleOnPlay,
+    handleOnPause,
+    handleOnEnded,
+  } = props;
   const videoUrl = `https://home.wistia.com/medias/${videoId}`;
-  const [state, setState] = useState<string>();
-  const textMessage = [
-    "Called when media starts playing.",
-    "The video was just played!",
-    "The video was just paused!",
-    "The video has ended!",
-  ];
-
-  const handleOnStart = () => {
-    setState(textMessage["0"]);
-  };
-
-  const handleOnPlay = () => {
-    setState(textMessage["1"]);
-  };
-
-  const handleOnPause = () => {
-    setState(textMessage["2"]);
-  };
-
-  const handleOnEnded = () => {
-    setState(textMessage["3"]);
-  };
 
   return (
     <>
