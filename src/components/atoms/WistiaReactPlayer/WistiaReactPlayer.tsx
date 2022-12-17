@@ -11,7 +11,23 @@ function WistiaReactPlayer(props: VideoProps) {
     handleOnPause,
     handleOnEnded,
   } = props;
+
+  if (!videoId) {
+    console.log("No videoId provided to videoUrl");
+    return null;
+  }
+
   const videoUrl = `https://home.wistia.com/medias/${videoId}`;
+
+  if (ReactPlayer.canPlay(videoUrl)) {
+    console.log(`Cannot play video, URL incorrect: ${videoUrl}`);
+    return null;
+  }
+
+  const onError = (e: any) => {
+    console.log("Cannot play video, the following error occured: ", e);
+    return null;
+  };
 
   return (
     <>
@@ -26,6 +42,7 @@ function WistiaReactPlayer(props: VideoProps) {
           onPlay={handleOnPlay}
           onPause={handleOnPause}
           onEnded={handleOnEnded}
+          onError={onError}
         />
       </StyledVideoWrapper>
 
