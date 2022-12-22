@@ -19,7 +19,7 @@ function WistiaReactPlayer(props: VideoProps) {
 
   const videoUrl = `https://home.wistia.com/medias/${videoId}`;
 
-  if (ReactPlayer.canPlay(videoUrl)) {
+  if (!ReactPlayer.canPlay(videoUrl)) {
     console.log(`Cannot play video, URL incorrect: ${videoUrl}`);
     return null;
   }
