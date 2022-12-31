@@ -15,10 +15,6 @@ test("event should work", async ({ mount, page }) => {
   // Perform locator click. This will trigger the event.
   await component.click();
 
-  // On first execution, Playwright test will generate reference screenshots.
-  await page.goto("http://localhost:3000/login");
-  await expect(page).toHaveScreenshot();
-
   // Assert that respective events have been fired.
   expect(clicked).toBeTruthy();
 });
