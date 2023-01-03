@@ -1,7 +1,7 @@
 import { test, expect } from "@playwright/experimental-ct-react";
 import Button from "../../atoms/Button";
 
-test("event should work", async ({ mount, page }) => {
+test("event should work", async ({ mount }) => {
   let clicked = false;
 
   // Mount a component. Returns locator pointing to the component.
