@@ -3,85 +3,37 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme();
 
 theme.typography.h1 = {
-  fontFamily: "Roboto",
+  fontFamily: "Roboto, sans-serif",
   fontWeight: 400,
-  fontSize: "1.6rem",
-  [theme.breakpoints.up("sm")]: {
-    fontSize: "2.4rem",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "3.2rem",
-  },
-  [theme.breakpoints.up("lg")]: {
-    fontSize: "4.8rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "6rem",
-  },
+  fontSize: "clamp(2.25em, 5vw, 2.75em)",
 };
 
 theme.typography.h2 = {
-  fontFamily: "Roboto",
+  fontFamily: "Roboto, sans-serif",
   fontWeight: 400,
-  fontSize: "1.25rem",
-  [theme.breakpoints.up("sm")]: {
-    fontSize: "2rem",
-  },
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2.75rem",
-  },
-  [theme.breakpoints.up("lg")]: {
-    fontSize: "3.5rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "5rem",
-  },
+  fontSize: "clamp(2em, 5vw, 2.5em)",
 };
 
 theme.typography.h3 = {
-  fontFamily: "Roboto",
+  fontFamily: "Roboto, sans-serif",
   fontWeight: 400,
-  fontSize: "1.125rem",
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2.3rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "4rem",
-  },
+  fontSize: "clamp(1.75em, 5vw, 2.25em)",
 };
 
 theme.typography.h4 = {
-  fontFamily: "Roboto",
+  fontFamily: "Roboto, sans-serif",
   fontWeight: 400,
-  fontSize: "1rem",
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "3rem",
-  },
+  fontSize: "clamp(1.5em, 5vw, 2em)",
 };
 
 theme.typography.h5 = {
-  fontFamily: "Roboto",
+  fontFamily: "Roboto, sans-serif",
   fontWeight: 400,
-  fontSize: "1rem",
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "2rem",
-  },
+  fontSize: "clamp(1.25em, 5vw, 1.75em)",
 };
 
 theme.typography.h6 = {
-  fontFamily: "Roboto",
+  fontFamily: "Roboto, sans-serif",
   fontWeight: 400,
-  fontSize: "1rem",
-  [theme.breakpoints.up("md")]: {
-    fontSize: "2rem",
-  },
-  [theme.breakpoints.up("xl")]: {
-    fontSize: "1rem",
-  },
+  fontSize: "clamp(1em, 5vw, 1.5em)",
 };
