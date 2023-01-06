@@ -14,6 +14,9 @@ function Navigation() {
         <li className="list__item">
           <Link to="/layout">Layout</Link>
         </li>
+        <li className="list__item">
+          <Link to="/heading">Heading</Link>
+        </li>
       </ul>
     </StyledNav>
   );
