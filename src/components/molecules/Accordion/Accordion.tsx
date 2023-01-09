@@ -1,52 +1,35 @@
+import { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { faqs } from "./mock";
+import { StyledWrapper } from "./Accordion.style";
 
 function SimpleAccordion() {
+  const [isExpanded, setIsExpanded] = useState<string | false>("");
+
+  const handleChangeEvent =
+    (panel: string) => (_: React.SyntheticEvent, newExpanded: boolean) => {
+      setIsExpanded(newExpanded ? panel : false);
+    };
+
+  const accordionList = faqs.map((faq) => {
+    const { id, title, content } = faq;
+    return (
+      <Accordion onChange={handleChangeEvent(id)} expanded={isExpanded === id}>
+        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
+          <span>{title}</span>
+        </AccordionSummary>
+        <div className="faqs-content">{content}</div>
+      </Accordion>
+    );
+  });
+
   return (
-    <div>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel1a-content"
-          id="panel1a-header"
-        >
-          <Typography>Accordion 1</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel2a-content"
-          id="panel2a-header"
-        >
-          <Typography>Accordion 2</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion disabled>
-        <AccordionSummary
-          expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel3a-content"
-          id="panel3a-header"
-        >
-          <Typography>Disabled Accordion</Typography>
-        </AccordionSummary>
-      </Accordion>
-    </div>
+    <StyledWrapper>
+      <h1>Frequently asked questions</h1>
+      {accordionList}
+    </StyledWrapper>
   );
 }
 
