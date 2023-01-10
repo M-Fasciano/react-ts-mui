@@ -1,27 +1,7 @@
 import styled from "styled-components";
 
-export const StyledWrapper = styled("div")(({ theme }) => ({
+export const StyledWrapper = styled("div")(() => ({
   padding: "2rem",
-
-  ".faqs-title": {
-    fontSize: 16,
-    lineHeight: "24px",
-    fontWeight: 600,
-
-    ".Mui-expanded": {
-      transform: "rotate(0)",
-    },
-  },
-
-  ".faqs-content": {
-    fontSize: 12,
-    padding: "1rem 0",
-    maxWidth: "100%",
-
-    "@media (min-width: 1024px)": {
-      maxWidth: "75%",
-    },
-  },
 
   ".MuiAccordion-root": {
     boxShadow: "none",
@@ -38,5 +18,25 @@ export const StyledWrapper = styled("div")(({ theme }) => ({
     ".MuiButtonBase-root": {
       padding: 0,
     },
+  },
+}));
+
+export const StyledTitle = styled("h1")(() => ({
+  fontSize: 16,
+  lineHeight: "24px",
+  fontWeight: 600,
+
+  ".Mui-expanded": {
+    transform: "rotate(0)",
+  },
+}));
+
+export const StyledContent = styled("div")(() => ({
+  fontSize: 12,
+  padding: "1rem 0",
+  maxWidth: "100%",
+
+  "@media (min-width: 1024px)": {
+    maxWidth: "75%",
   },
 }));
