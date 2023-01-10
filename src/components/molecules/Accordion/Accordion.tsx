@@ -3,7 +3,7 @@ import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { faqs } from "./mock";
-import { StyledWrapper } from "./Accordion.style";
+import { StyledContent, StyledTitle, StyledWrapper } from "./Accordion.style";
 
 function SimpleAccordion() {
   const [isExpanded, setIsExpanded] = useState<string | false>("");
@@ -18,9 +18,9 @@ function SimpleAccordion() {
     return (
       <Accordion onChange={handleChangeEvent(id)} expanded={isExpanded === id}>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <span>{title}</span>
+          <StyledTitle>{title}</StyledTitle>
         </AccordionSummary>
-        <div className="faqs-content">{content}</div>
+        <StyledContent>{content}</StyledContent>
       </Accordion>
     );
   });
