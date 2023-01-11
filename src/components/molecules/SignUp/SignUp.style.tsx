@@ -9,11 +9,11 @@ export const StyledFormWrapper = styled("div")`
   @media (min-width: 1024px) {
     width: 50%;
   }
+`;
 
-  .sign-up-form {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    max-width: 600px;
-  }
+export const StyledForm = styled("form")`
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 600px;
 `;
