@@ -1,23 +1,23 @@
 import { Link } from "react-router-dom";
-import { StyledNav } from "./Navigation.style";
+import { StyledList, StyledListItem, StyledNav } from "./Navigation.style";
 
 function Navigation() {
   return (
     <StyledNav>
-      <ul className="list">
-        <li className="list__item">
+      <StyledList>
+        <StyledListItem>
           <Link to="/login">Login</Link>
-        </li>
-        <li className="list__item">
+        </StyledListItem>
+        <StyledListItem>
           <Link to="/video">Video</Link>
-        </li>
-        <li className="list__item">
+        </StyledListItem>
+        <StyledListItem>
           <Link to="/layout">Layout</Link>
-        </li>
-        <li className="list__item">
+        </StyledListItem>
+        <StyledListItem>
           <Link to="/heading">Heading</Link>
-        </li>
-      </ul>
+        </StyledListItem>
+      </StyledList>
     </StyledNav>
   );
 }

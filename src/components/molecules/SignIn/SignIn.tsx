@@ -1,7 +1,7 @@
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Button from "../../atoms/Button";
 import TextField from "../../atoms/TextField";
-import { StyledFormWrapper } from "./SignIn.style";
+import { StyledForm, StyledFormWrapper } from "./SignIn.style";
 import { useYupValidationResolver } from "../../../utils/validationResolver";
 import {
   IFormInputs,
@@ -28,11 +28,7 @@ const SignIn = () => {
     <StyledFormWrapper>
       <h1>Sign in</h1>
       <p>Sign in with your Vision Direct account</p>
-      <form
-        className="sign-in-form"
-        onSubmit={handleSubmit(onSubmit)}
-        noValidate
-      >
+      <StyledForm onSubmit={handleSubmit(onSubmit)} noValidate>
         <Controller
           render={({
             field: { value, ref, ...rest },
@@ -74,7 +70,7 @@ const SignIn = () => {
           control={control}
         />
         <Button label={"Sign in"} primary type="submit" />
-      </form>
+      </StyledForm>
     </StyledFormWrapper>
   );
 };

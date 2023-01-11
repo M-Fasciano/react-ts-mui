@@ -1,7 +1,7 @@
 import { useForm, Controller, SubmitHandler } from "react-hook-form";
 import Button from "../../atoms/Button";
 import TextField from "../../atoms/TextField";
-import { StyledFormWrapper } from "./SignUp.style";
+import { StyledForm, StyledFormWrapper } from "./SignUp.style";
 import { useYupValidationResolver } from "../../../utils/validationResolver";
 import {
   validationSchemaSignUp,
@@ -31,11 +31,7 @@ const SignUp = () => {
         Don't have an account? Manage all your vision care needs and get
         exclusive offers.
       </p>
-      <form
-        className="sign-up-form"
-        onSubmit={handleSubmit(onSubmit)}
-        noValidate
-      >
+      <StyledForm onSubmit={handleSubmit(onSubmit)} noValidate>
         <Controller
           render={({
             field: { value, ref, ...rest },
@@ -117,7 +113,7 @@ const SignUp = () => {
           control={control}
         />
         <Button label={"Create an account"} primary type="submit" />
-      </form>
+      </StyledForm>
     </StyledFormWrapper>
   );
 };

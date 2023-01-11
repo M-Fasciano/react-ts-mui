@@ -1,5 +1,8 @@
 import { useEffect } from "react";
-import { StyledVideoWrapper } from "./WistiaPlayerEmbed.styles";
+import {
+  StyledReactPlayer,
+  StyledVideoWrapper,
+} from "./WistiaPlayerEmbed.styles";
 
 declare global {
   interface Window {
@@ -30,11 +33,11 @@ const WistiaPlayerEmbed = (props: any) => {
 
   return (
     <StyledVideoWrapper>
-      <div className="react-player">
+      <StyledReactPlayer>
         <div
           className={`wistia_embed wistia_async_${props.videoId} videoFoam=true`}
         />
-      </div>
+      </StyledReactPlayer>
     </StyledVideoWrapper>
   );
 };
