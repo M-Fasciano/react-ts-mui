@@ -36,7 +36,8 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
-    "test-ct": "playwright test -c playwright-ct.config.ts"
+    "test-ct": "playwright test -c playwright-ct.config.ts",
+    "svgr": "svgr --typescript --icon --title-prop --replace-attr-values 'black=currentColor' -d src/components/atoms/Icons -- src/assets"
   },
   "eslintConfig": {
     "extends": [
@@ -78,9 +79,11 @@
     "@storybook/preset-create-react-app": "^4.1.2",
     "@storybook/react": "^6.5.13",
     "@storybook/testing-library": "^0.0.13",
+    "@svgr/cli": "^6.5.1",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-named-exports-order": "^0.0.2",
     "prop-types": "^15.8.1",
+    "rimraf": "^4.0.4",
     "webpack": "^5.74.0"
   }
 }
