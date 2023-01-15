@@ -1,5 +1,5 @@
-import { GridViewIcon, ListViewIcon } from "../../Icons/Icons";
 import { ButtonProps } from "../../pages/ToggleLayout";
+import { ViewList, ViewModule } from "../Icons/action";
 import { StyledButtonWrapper } from "./ToggleViewButton.style";
 
 function ToggleViewButton(props: ButtonProps) {
@@ -8,10 +8,10 @@ function ToggleViewButton(props: ButtonProps) {
   return (
     <StyledButtonWrapper>
       <button onClick={handleToggle} className={selected ? "active" : ""}>
-        <GridViewIcon htmlColor={"#CCCFD9"} />
+        <ViewModule height={24} width={24} />
       </button>
       <button onClick={handleToggle} className={selected ? "" : "active"}>
-        <ListViewIcon htmlColor={"#CCCFD9"} />
+        <ViewList height={24} width={24} />
       </button>
     </StyledButtonWrapper>
   );
