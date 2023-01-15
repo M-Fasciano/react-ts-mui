@@ -1,0 +1,12 @@
+export { default as Attachment } from "./Attachment";
+export { default as CloudCircle } from "./CloudCircle";
+export { default as CloudDone } from "./CloudDone";
+export { default as CloudDownload } from "./CloudDownload";
+export { default as CloudOff } from "./CloudOff";
+export { default as CloudQueue } from "./CloudQueue";
+export { default as CloudUpload } from "./CloudUpload";
+export { default as Cloud } from "./Cloud";
+export { default as CreateNewFolder } from "./CreateNewFolder";
+export { default as FolderOpen } from "./FolderOpen";
+export { default as FolderShared } from "./FolderShared";
+export { default as Folder } from "./Folder";
