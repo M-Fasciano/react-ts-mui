@@ -16,6 +16,7 @@ export const StyledButtonWrapper = styled("div")`
       svg {
         path {
           fill: #000f42;
+          fill-opacity: 1;
         }
       }
     }
