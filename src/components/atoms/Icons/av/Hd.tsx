@@ -1,29 +1,22 @@
-import * as React from "react";
-import { SVGProps } from "react";
-interface SVGRProps {
-  title?: string;
-  titleId?: string;
-}
-const SvgHd = ({
-  title,
-  titleId,
-  ...props
-}: SVGProps<SVGSVGElement> & SVGRProps) => (
-  <svg
-    width="1em"
-    height="1em"
-    viewBox="0 0 24 24"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    aria-labelledby={titleId}
-    {...props}
-  >
-    {title ? <title id={titleId}>{title}</title> : null}
-    <path
-      d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2Zm-8.75 12c-.41 0-.75-.34-.75-.75V13h-2v1.25c0 .41-.34.75-.75.75S6 14.66 6 14.25v-4.5c0-.41.34-.75.75-.75s.75.34.75.75v1.75h2V9.75c0-.41.34-.75.75-.75s.75.34.75.75v4.5c0 .41-.34.75-.75.75Zm3.25-6H17c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1h-3.5c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5Zm1 4.5h2v-3h-2v3Z"
-      fill="#000"
-      fillOpacity={0.54}
-    />
-  </svg>
-);
+import React from "react";
+import SvgIcon, { SvgIconProps } from "@mui/material/SvgIcon";
+const SvgHd = (props: SvgIconProps) => {
+  const { ...other } = props;
+  return (
+    <SvgIcon
+      width={24}
+      height={24}
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      {...other}
+    >
+      <path
+        d="M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2Zm-8.75 12c-.41 0-.75-.34-.75-.75V13h-2v1.25c0 .41-.34.75-.75.75S6 14.66 6 14.25v-4.5c0-.41.34-.75.75-.75s.75.34.75.75v1.75h2V9.75c0-.41.34-.75.75-.75s.75.34.75.75v4.5c0 .41-.34.75-.75.75Zm3.25-6H17c.55 0 1 .45 1 1v4c0 .55-.45 1-1 1h-3.5c-.28 0-.5-.22-.5-.5v-5c0-.28.22-.5.5-.5Zm1 4.5h2v-3h-2v3Z"
+        fill="#000"
+        fillOpacity={0.54}
+      />
+    </SvgIcon>
+  );
+};
 export default SvgHd;

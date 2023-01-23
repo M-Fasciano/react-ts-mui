@@ -37,7 +37,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test-ct": "playwright test -c playwright-ct.config.ts",
-    "svgr": "svgr --typescript --icon --title-prop --replace-attr-values 'black=currentColor' -d src/components/atoms/Icons -- src/assets"
+    "svgr": "svgr --typescript --icon --replace-attr-values 'black=currentColor' --template src/components/atoms/Icons/svg-icon-template.js -d src/components/atoms/Icons -- src/assets"
   },
   "eslintConfig": {
     "extends": [
