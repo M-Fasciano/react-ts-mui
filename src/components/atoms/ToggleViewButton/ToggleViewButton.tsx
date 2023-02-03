@@ -8,10 +8,10 @@ function ToggleViewButton(props: ButtonProps) {
   return (
     <StyledButtonWrapper>
       <button onClick={handleToggle} className={selected ? "active" : ""}>
-        <IconViewModule height={24} width={24} />
+        <IconViewModule sx={{ fontSize: 24 }} />
       </button>
       <button onClick={handleToggle} className={selected ? "" : "active"}>
-        <IconViewList height={24} width={24} />
+        <IconViewList sx={{ fontSize: 24 }} />
       </button>
     </StyledButtonWrapper>
   );
