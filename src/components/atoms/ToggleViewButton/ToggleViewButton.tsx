@@ -1,5 +1,5 @@
 import { ButtonProps } from "../../pages/ToggleLayout";
-import { ViewList, ViewModule } from "../Icons/action";
+import { IconViewList, IconViewModule } from "../Icons/action";
 import { StyledButtonWrapper } from "./ToggleViewButton.style";
 
 function ToggleViewButton(props: ButtonProps) {
@@ -8,10 +8,10 @@ function ToggleViewButton(props: ButtonProps) {
   return (
     <StyledButtonWrapper>
       <button onClick={handleToggle} className={selected ? "active" : ""}>
-        <ViewModule height={24} width={24} />
+        <IconViewModule sx={{ fontSize: 24 }} />
       </button>
       <button onClick={handleToggle} className={selected ? "" : "active"}>
-        <ViewList height={24} width={24} />
+        <IconViewList sx={{ fontSize: 24 }} />
       </button>
     </StyledButtonWrapper>
   );
