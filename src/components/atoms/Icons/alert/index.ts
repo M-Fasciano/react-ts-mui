@@ -1,5 +1,5 @@
-export { default as AddAlert } from "./AddAlert";
-export { default as ErrorOutline } from "./ErrorOutline";
-export { default as Error } from "./Error";
-export { default as NotificationImportant } from "./NotificationImportant";
-export { default as Warning } from "./Warning";
+export { default as IconAddAlert } from "./AddAlert";
+export { default as IconErrorOutline } from "./ErrorOutline";
+export { default as IconError } from "./Error";
+export { default as IconNotificationImportant } from "./NotificationImportant";
+export { default as IconWarning } from "./Warning";
