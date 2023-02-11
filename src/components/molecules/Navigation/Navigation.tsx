@@ -17,6 +17,9 @@ function Navigation() {
         <StyledListItem>
           <Link to="/heading">Heading</Link>
         </StyledListItem>
+        <StyledListItem>
+          <Link to="/reminder">Reminder</Link>
+        </StyledListItem>
       </StyledList>
     </StyledNav>
   );
