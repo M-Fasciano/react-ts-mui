@@ -1,6 +1,6 @@
 module.exports = {
   disableEmoji: false,
-  format: "{ticketNumber}: {type} - {subject}",
+  format: "{type}: {emoji}{subject}",
   list: [
     "test",
     "feat",
@@ -75,6 +75,10 @@ module.exports = {
       emoji: "💍",
       value: "test",
     },
+    allowTicketNumber: true,
+    isTicketNumberRequired: true,
+    ticketNumberPrefix: "TICKET-",
+    ticketNumberRegExp: "[^0-9]",
     messages: {
       type: "Select the type of change that you're committing:",
       customScope: "Select the scope this component affects:",
