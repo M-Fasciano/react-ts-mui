@@ -7,103 +7,28 @@ import {
   RadioGroup,
   Stack,
 } from "@mui/material";
-import { Dayjs } from "dayjs";
 import dayjs from "dayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { useEffect, useState } from "react";
-import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import {
-  IFormInputs,
-  validationSchemaReminder,
-} from "../../../constant/formsValidation";
-import { useYupValidationResolver } from "../../../utils/validationResolver";
+import { Controller } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 
-const Reminder = () => {
-  const resolver = useYupValidationResolver(validationSchemaReminder);
-  const [checked, setChecked] = useState({ off: true, on: false });
-  const [isVisible, setIsVisible] = useState<Boolean>(false);
-  const [date, setDate] = useState<Dayjs | null>(dayjs(new Date()));
-  const [hasPhone, setHasPhone] = useState<Boolean>(true);
-  const [hasEmail, setHasEmail] = useState<Boolean>(true);
-  const [countryCallingCode, setCountryCallingCode] = useState<string>("");
-  const [currentUserPhone, setCurrentUserPhone] =
-    useState<string>("7879 111111");
-  const [curentUserEmail, setCurentUserEmail] =
-    useState<string>("test@test.com");
-
-  const defaultValues = {
-    phone: `${countryCallingCode} ${currentUserPhone}`,
-    email: curentUserEmail,
-    date: dayjs(date).format("DD/MM/YYYY"),
-  };
-
-  const {
-    control,
-    handleSubmit,
-    setValue,
-    getValues,
-    reset,
-    formState: { errors },
-  } = useForm<IFormInputs>({
-    mode: "onBlur",
-    defaultValues,
-    resolver,
-  });
-
-  const handleResetRadio = (e: any) => {
-    setIsVisible(!isVisible);
-    setChecked(() => {
-      return {
-        off: false,
-        on: false,
-        [e.target.value]: true,
-      };
-    });
-  };
-
-  const onSubmit: SubmitHandler<IFormInputs> = (data) => {
-    console.log({ data });
-  };
-
-  const handlePhoneCheckbox = (e: any) => {
-    setValue("phone", "");
-    setHasPhone(e.target.checked);
-  };
-
-  const handleEmailCheckbox = (e: any) => {
-    setValue("email", "");
-    setHasEmail(e.target.checked);
-  };
-
-  const resetForm = () => {
-    reset(defaultValues);
-  };
-
-  useEffect(() => {
-    if (!hasPhone && !hasEmail) {
-      resetForm();
-      setIsVisible(false);
-      setChecked(() => ({ off: true, on: false }));
-      setHasPhone(true);
-      setHasEmail(true);
-    }
-  }, [hasEmail, hasPhone]);
-
-  useEffect(() => {
-    fetch("https://ipapi.co/json/")
-      .then((res) => res.json())
-      .then((response) => {
-        setValue(
-          "phone",
-          `${response.country_calling_code} ${currentUserPhone}`
-        );
-        setCountryCallingCode(response.country_calling_code);
-      });
-  }, [currentUserPhone, setValue]);
-
+const Reminder = ({
+  control,
+  handleSubmit,
+  getValues,
+  errors,
+  handleResetRadio,
+  onSubmit,
+  handlePhoneCheckbox,
+  handleEmailCheckbox,
+  checked,
+  date,
+  isVisible,
+  setDate,
+  setValue,
+}: any) => {
   return (
     <form onSubmit={handleSubmit(onSubmit)} noValidate>
       <FormControl>
