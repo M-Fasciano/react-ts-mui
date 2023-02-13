@@ -39,7 +39,8 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test-ct": "playwright test -c playwright-ct.config.ts",
-    "svgr": "svgr --typescript --icon --replace-attr-values 'black=currentColor' --index-template src/components/atoms/Icons/index-template.js --template src/components/atoms/Icons/svg-icon-template.js -d src/components/atoms/Icons -- src/assets"
+    "svgr": "svgr --typescript --icon --replace-attr-values 'black=currentColor' --index-template src/components/atoms/Icons/index-template.js --template src/components/atoms/Icons/svg-icon-template.js -d src/components/atoms/Icons -- src/assets",
+    "commit": "cz"
   },
   "eslintConfig": {
     "extends": [
@@ -84,8 +85,16 @@
     "@svgr/cli": "^6.5.1",
     "@types/styled-components": "^5.1.26",
     "babel-plugin-named-exports-order": "^0.0.2",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-cz": "^4.9.0",
     "prop-types": "^15.8.1",
     "rimraf": "^4.0.4",
     "webpack": "^5.74.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
