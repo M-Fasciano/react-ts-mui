@@ -1,92 +1,69 @@
 module.exports = {
-  disableEmoji: false,
-  format: "{type}: {emoji}{subject}",
-  list: [
-    "test",
-    "feat",
-    "fix",
-    "chore",
-    "docs",
-    "refactor",
-    "style",
-    "ci",
-    "perf",
-  ],
-  maxMessageLength: 64,
-  minMessageLength: 3,
-  questions: [
-    "type",
-    "scope",
-    "subject",
-    "body",
-    "breaking",
-    "issues",
-    "lerna",
-  ],
-  scopes: [],
-  types: {
-    chore: {
-      description: "Build process or auxiliary tool changes",
-      emoji: "🤖",
-      value: "chore",
-    },
-    ci: {
-      description: "CI related changes",
-      emoji: "🎡",
-      value: "ci",
-    },
-    docs: {
-      description: "Documentation only changes",
-      emoji: "✏️",
-      value: "docs",
-    },
-    feat: {
-      description: "A new feature",
-      emoji: "🎸",
-      value: "feat",
-    },
-    fix: {
-      description: "A bug fix",
-      emoji: "🐛",
-      value: "fix",
-    },
-    perf: {
-      description: "A code change that improves performance",
-      emoji: "⚡️",
-      value: "perf",
-    },
-    refactor: {
-      description: "A code change that neither fixes a bug or adds a feature",
-      emoji: "💡",
-      value: "refactor",
-    },
-    release: {
-      description: "Create a release commit",
-      emoji: "🏹",
-      value: "release",
-    },
-    style: {
-      description: "Markup, white-space, formatting, missing semi-colons...",
-      emoji: "💄",
+  types: [
+    { value: "feat", name: "feat:     A new feature" },
+    { value: "fix", name: "fix:      A bug fix" },
+    { value: "docs", name: "docs:     Documentation only changes" },
+    {
       value: "style",
+      name: "style:    Changes that do not affect the meaning of the code\n            (white-space, formatting, missing semi-colons, etc)",
     },
-    test: {
-      description: "Adding missing tests",
-      emoji: "💍",
-      value: "test",
+    {
+      value: "refactor",
+      name: "refactor: A code change that neither fixes a bug nor adds a feature",
     },
-    allowTicketNumber: true,
-    isTicketNumberRequired: true,
-    ticketNumberPrefix: "TICKET-",
-    ticketNumberRegExp: "[^0-9]",
-    messages: {
-      type: "Select the type of change that you're committing:",
-      customScope: "Select the scope this component affects:",
-      subject: "Write a short, imperative mood description of the change:\n",
-      body: "Provide a longer description of the change:\n ",
-      breaking: "List any breaking changes:\n",
-      footer: "Issues this commit closes, e.g #123:",
-      confirmCommit: "The packages that this commit has affected\n",
+    {
+      value: "perf",
+      name: "perf:     A code change that improves performance",
     },
+    { value: "test", name: "test:     Adding missing tests" },
+    {
+      value: "chore",
+      name: "chore:    Changes to the build process or auxiliary tools\n            and libraries such as documentation generation",
+    },
+    { value: "revert", name: "revert:   Revert to a commit" },
+    { value: "WIP", name: "WIP:      Work in progress" },
+  ],
+
+  usePreparedCommit: false, // to re-use commit from ./.git/COMMIT_EDITMSG
+  allowTicketNumber: true,
+  isTicketNumberRequired: true,
+  ticketNumberPrefix: "TICKET-",
+  ticketNumberRegExp: "\\d{1,5}",
+
+  // it needs to match the value for field type. Eg.: 'fix'
+  /*
+  scopeOverrides: {
+    fix: [
+
+      {name: 'merge'},
+      {name: 'style'},
+      {name: 'e2eTest'},
+      {name: 'unitTest'}
+    ]
   },
+  */
+  // override the messages, defaults are as follows
+  messages: {
+    type: "Select the type of change that you're committing:",
+    scope: "\nDenote the SCOPE of this change (optional):",
+    // used if allowCustomScopes is true
+    customScope: "Denote the SCOPE of this change:",
+    subject: "Write a SHORT, IMPERATIVE tense description of the change:\n",
+    body: 'Provide a LONGER description of the change (optional). Use "|" to break new line:\n',
+    breaking: "List any BREAKING CHANGES (optional):\n",
+    footer:
+      "List any ISSUES CLOSED by this change (optional). E.g.: #31, #34:\n",
+    confirmCommit: "Are you sure you want to proceed with the commit above?",
+  },
+
+  allowCustomScopes: false,
+  allowBreakingChanges: false,
+  // skip any questions you want
+  skipQuestions: ["scope", "body", "customScope", "breaking", "footer"],
+
+  // limit subject length
+  // subjectLimit: 100,
+  // breaklineChar: '|', // It is supported for fields body and footer.
+  // footerPrefix : 'ISSUES CLOSED:'
+  // askForBreakingChangeFirst : true, // default is false
 };
