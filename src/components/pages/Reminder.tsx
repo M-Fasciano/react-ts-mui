@@ -14,7 +14,7 @@ const StyledWrapper = styled("div")`
   margin: 2rem;
 `;
 
-function ReminderPage() {
+const ReminderPage = () => {
   const resolver = useYupValidationResolver(validationSchemaReminder);
   const [checked, setChecked] = useState({ off: true, on: false });
   const [isVisible, setIsVisible] = useState<Boolean>(false);
@@ -114,6 +114,6 @@ function ReminderPage() {
       />
     </StyledWrapper>
   );
-}
+};
 
 export default ReminderPage;

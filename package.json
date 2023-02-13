@@ -86,8 +86,15 @@
     "@types/styled-components": "^5.1.26",
     "babel-plugin-named-exports-order": "^0.0.2",
     "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "git-cz": "^4.9.0",
     "prop-types": "^15.8.1",
     "rimraf": "^4.0.4",
     "webpack": "^5.74.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
