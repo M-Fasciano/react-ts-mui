@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@digitalroute/cz-conventional-changelog-for-jira": "^8.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/material-icons": "^4.5.4",
@@ -94,7 +95,11 @@
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "./node_modules/@digitalroute/cz-conventional-changelog-for-jira",
+      "jiraLocation": "pre-type",
+      "skipBreaking": true,
+      "jiraPrefix": "N1",
+      "jiraAppend": ":"
     }
   }
 }
