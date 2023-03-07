@@ -5,7 +5,6 @@ import Login from "./components/pages/Login";
 import Reminder from "./components/pages/Reminder";
 import ToggleLayout from "./components/pages/ToggleLayout";
 import Video from "./components/pages/Video";
-import Datepicker from "./components/pages/Datepicker";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
         <Route path="layout" element={<ToggleLayout />} />
         <Route path="heading" element={<Heading />} />
         <Route path="reminder" element={<Reminder />} />
-        <Route path="datepicker" element={<Datepicker />} />
       </Routes>
     </>
   );
