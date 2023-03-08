@@ -112,7 +112,7 @@ const SignUp = () => {
           name="password"
           control={control}
         />
-        <Button label={"Create an account"} primary type="submit" />
+        <Button label="Create an account" primary type="submit" />
       </StyledForm>
     </StyledFormWrapper>
   );
