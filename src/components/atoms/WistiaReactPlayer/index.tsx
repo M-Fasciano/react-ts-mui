@@ -1,1 +1,3 @@
-export { default } from "./WistiaReactPlayer";
+import WistiaReactPlayer from "./WistiaReactPlayer";
+
+export default WistiaReactPlayer;
