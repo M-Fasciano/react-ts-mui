@@ -1,1 +1,3 @@
-export { default } from "./WistiaPlayerEmbed";
+import WistiaPlayerEmbed from "./WistiaPlayerEmbed";
+
+export default WistiaPlayerEmbed;

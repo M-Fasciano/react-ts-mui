@@ -1,1 +1,3 @@
-export { default } from "./ToggleViewButton";
+import ToggleViewButton from "./ToggleViewButton";
+
+export default ToggleViewButton;
