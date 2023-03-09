@@ -1,18 +1,52 @@
-import * as React from "react";
-import { Typography } from "@mui/material";
-import { storiesOf } from "@storybook/react";
-import { ThemeProvider } from "@mui/material/styles";
-import { theme } from "./Typography.style";
+import { ComponentStory, ComponentMeta } from "@storybook/react";
+import Typography from "@mui/material/Typography";
+import { Stack } from "@mui/material";
+import { Variant } from "@mui/material/styles/createTypography";
+import useBreakpoints from "../../hooks/useBreakpoints";
+import styled from "styled-components";
 
-storiesOf("Typography", module).add("All", () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <Typography variant="h1">H1 Example</Typography>
-      <Typography variant="h2">H2 Example</Typography>
-      <Typography variant="h3">H3 Example</Typography>
-      <Typography variant="h4">H4 Example</Typography>
-      <Typography variant="h5">H5 Example</Typography>
-      <Typography variant="h6">H6 Example</Typography>
-    </ThemeProvider>
-  );
-});
+const copy = "The quick brown fox jumps over the lazy dog.";
+
+const variantArr = [
+  "h1",
+  "h2",
+  "h3",
+  "h4",
+  "h5",
+  "h6",
+  "subtitle1",
+  "subtitle2",
+  "body1",
+  "body2",
+  "caption",
+] as Variant[];
+
+const typographyList = (isMobile = false) => {
+  return variantArr.map((item) => {
+    return (
+      <Stack spacing={1}>
+        <Typography variant="body1">
+          {isMobile ? "Mobile" : "Desktop"} {item}
+        </Typography>
+        <Typography variant={item}>{copy}</Typography>
+      </Stack>
+    );
+  });
+};
+
+const StyledTypography = styled(Typography)(() => ({}));
+
+export default {
+  title: "Typography",
+  component: StyledTypography,
+} as ComponentMeta<typeof StyledTypography>;
+
+const Template: ComponentStory<typeof StyledTypography> = () => {
+  const { isMobile } = useBreakpoints();
+  return <Stack spacing={16}>{typographyList(isMobile)}</Stack>;
+};
+
+export const Default = Template.bind({});
+Default.args = {
+  children: typographyList(),
+};
