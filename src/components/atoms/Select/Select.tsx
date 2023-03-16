@@ -55,12 +55,11 @@ export default function Select(props: SelectProps) {
         open={open}
         className={open ? "Mui-open" : ""}
       >
-        {options &&
-          options?.map((option: any) => (
-            <MenuItem key={option.key} value={option.key || ""}>
-              {option.value}
-            </MenuItem>
-          ))}
+        {options?.map((option: any) => (
+          <MenuItem key={option.key} value={option.key || ""}>
+            {option.value}
+          </MenuItem>
+        ))}
       </StyledSelect>
     </FormControl>
   );
