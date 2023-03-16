@@ -2,12 +2,13 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Textarea from "./Textarea";
 
 export default {
-  title: "components/atoms/TexArea",
+  title: "components/atoms/Textarea",
   component: Textarea,
   args: {
     defaultValue: "Test value",
     className: "textarea",
     minRows: 7,
+    multiline: true,
   },
 } as ComponentMeta<typeof Textarea>;
 
@@ -27,5 +28,4 @@ Disabled.args = { disabled: true };
 export const Error = Template.bind({});
 Error.args = {
   error: true,
-  className: "textarea textarea--error",
 };
