@@ -2,13 +2,16 @@ import {
   styled,
   Select as MuiSelect,
   selectClasses as MuiSelectClasses,
+  inputBaseClasses as MuiInputBaseClasses,
+  outlinedInputClasses as MuiOutlinedInputClasses,
+  svgIconClasses as MuiSvgIconClasses,
 } from "@mui/material";
 
 export const StyledSelect = styled(MuiSelect)(({ theme }) => ({
-  "&.MuiInputBase-root": {
-    border: `solid 1px`,
+  [`&.${MuiInputBaseClasses.root}`]: {
+    border: `solid 1px ${theme.palette.primary.main}`,
 
-    "&.Mui-focused": {
+    [`&.${MuiInputBaseClasses.focused}`]: {
       border: `solid 2px ${theme.palette.primary.main}`,
     },
 
@@ -16,22 +19,25 @@ export const StyledSelect = styled(MuiSelect)(({ theme }) => ({
       border: `solid 2px ${theme.palette.primary.main}`,
     },
 
-    "&.Mui-error": {
+    [`&.${MuiInputBaseClasses.error}`]: {
       border: `solid 1px ${theme.palette.error.main}`,
+    },
+
+    [`.${MuiSvgIconClasses.root}`]: {
+      position: "absolute",
+      pointerEvents: "none",
+      right: 16,
     },
   },
 
   [`& .${MuiSelectClasses.select}`]: {
     border: "none",
+    minWidth: 295,
+    width: "100%",
+    padding: theme.spacing(2),
   },
 
-  ".MuiSvgIcon-root": {
-    position: "absolute",
-    pointerEvents: "none",
-    right: 16,
-  },
-
-  ".MuiOutlinedInput-notchedOutline": {
+  [`.${MuiOutlinedInputClasses.notchedOutline}`]: {
     border: 0,
   },
 }));
