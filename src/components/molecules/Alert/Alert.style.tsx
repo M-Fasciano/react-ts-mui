@@ -13,11 +13,6 @@ export const StyledAlert = styled(MuiAlert)(({ theme }) => ({
   [`& .${MuiAlertClasses.icon}`]: {
     marginRight: theme.spacing(2),
     padding: 0,
-
-    "svg path": {
-      fill: "inherit",
-      fillOpacity: "1",
-    },
   },
 
   [`& .${MuiAlertClasses.message}`]: {
