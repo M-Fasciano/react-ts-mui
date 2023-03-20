@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Accordion from "@mui/material/Accordion";
 import AccordionSummary from "@mui/material/AccordionSummary";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { faqs } from "./mock";
 import { StyledContent, StyledTitle, StyledWrapper } from "./Accordion.style";
+import { IconExpandMore } from "../../atoms/Icons/navigation";
 
 function SimpleAccordion() {
   const [isExpanded, setIsExpanded] = useState<string | false>("");
@@ -17,10 +17,10 @@ function SimpleAccordion() {
     const { id, title, content } = faq;
     return (
       <Accordion onChange={handleChangeEvent(id)} expanded={isExpanded === id}>
-        <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-          <StyledTitle>{title}</StyledTitle>
+        <AccordionSummary expandIcon={<IconExpandMore />}>
+          <StyledTitle variant="h6">{title}</StyledTitle>
         </AccordionSummary>
-        <StyledContent>{content}</StyledContent>
+        <StyledContent variant="body1">{content}</StyledContent>
       </Accordion>
     );
   });
