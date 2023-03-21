@@ -2,7 +2,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Select from "./Select";
 
 export default {
-  title: "Components/Atoms/Select",
+  title: "Components/atoms/Select",
   component: Select,
 } as ComponentMeta<typeof Select>;
 

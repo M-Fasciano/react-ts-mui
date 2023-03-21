@@ -17,11 +17,22 @@ import * as PlacesIcons from "./places/index";
 import * as SocialIcons from "./social/index";
 import * as ToggleIcons from "./toggle/index";
 import IconWrapper from "./Icons";
+import { Typography } from "@mui/material";
+
+const StyledIcon = styled("div")`
+  align-items: center;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 0;
+  width: 100%;
+`;
 
 const StyledWrapper = styled("div")`
   display: grid;
   gap: 30px;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(6, 1fr);
   justify-items: center;
   padding: 3rem;
 `;
@@ -55,8 +66,15 @@ const placesIconsData = Object.values(PlacesIcons);
 const socialIconsData = Object.values(SocialIcons);
 const toggleIconsData = Object.values(ToggleIcons);
 
+console.log({ actionIconsData });
+
 const renderIconList: Function = (data: any[]): JSX.Element[] => {
-  return data.map((Icon) => <Icon height={24} width={24} />);
+  return data.map((Icon) => (
+    <StyledIcon>
+      <Typography variant="caption">{Icon.name.replace("Svg", "")}</Typography>
+      <Icon sx={{ fontSize: 24 }} />
+    </StyledIcon>
+  ));
 };
 
 const TemplateAction: ComponentStory<typeof IconWrapper> = () =>
