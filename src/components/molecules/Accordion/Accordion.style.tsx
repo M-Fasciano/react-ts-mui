@@ -1,5 +1,8 @@
 import { Typography } from "@mui/material";
 import styled from "styled-components";
+import { createTheme } from "@mui/material/styles";
+
+export const theme = createTheme();
 
 export const StyledWrapper = styled("div")(() => ({
   padding: "2rem",
@@ -31,7 +34,7 @@ export const StyledTitle = styled(Typography)(() => ({}));
 export const StyledContent = styled(Typography)(() => ({
   padding: "1rem 0",
 
-  "@media (min-width: 1024px)": {
+  [theme.breakpoints.up("md")]: {
     maxWidth: "75%",
   },
 }));
