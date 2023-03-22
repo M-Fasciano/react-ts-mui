@@ -6,7 +6,7 @@ export const StyledFormWrapper = styled("div")`
   gap: 16px;
   margin: 2rem;
 
-  @media (min-width: 1024px) {
+  ${({ theme }) => theme.breakpoints.up("md")} {
     width: 50%;
   }
 `;
