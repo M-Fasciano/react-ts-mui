@@ -9,7 +9,7 @@ const StyledWrapper = styled("div")`
   margin: 2rem;
   gap: 16px;
 
-  @media (min-width: 1024px) {
+  ${({ theme }) => theme.breakpoints.up("md")} {
     grid-template-columns: repeat(3, 1fr);
   }
 
