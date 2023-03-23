@@ -11,10 +11,6 @@ export const StyledSelect = styled(MuiSelect)(({ theme }) => ({
   [`&.${MuiInputBaseClasses.root}`]: {
     border: `solid 1px ${theme.palette.primary.main}`,
 
-    [`&.${MuiInputBaseClasses.focused}`]: {
-      border: `solid 2px ${theme.palette.primary.main}`,
-    },
-
     "&.Mui-open": {
       border: `solid 2px ${theme.palette.primary.main}`,
     },
@@ -32,12 +28,11 @@ export const StyledSelect = styled(MuiSelect)(({ theme }) => ({
 
   [`& .${MuiSelectClasses.select}`]: {
     border: "none",
-    minWidth: 295,
     width: "100%",
     padding: theme.spacing(2),
   },
 
   [`.${MuiOutlinedInputClasses.notchedOutline}`]: {
-    border: 0,
+    borderColor: "transparent",
   },
 }));
