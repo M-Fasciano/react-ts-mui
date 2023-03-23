@@ -1,10 +1,7 @@
-import React from "react";
 import {
   useTheme,
-  MenuItem,
   SelectProps as MuiSelectProps,
   FormControlProps as MuiFormControlProps,
-  SelectChangeEvent,
   FormControl,
 } from "@mui/material";
 import { StyledSelect } from "./Select.style";
@@ -16,30 +13,29 @@ export interface SelectProps {
   options?: any;
   value?: MuiSelectProps["value"];
   multiple?: MuiSelectProps["multiple"];
-  onChange?: (
-    event: SelectChangeEvent<unknown>,
-    child: React.ReactNode
-  ) => void;
+  onChange?: MuiSelectProps["onChange"];
   open?: boolean;
   error?: MuiFormControlProps["error"];
   focused?: MuiFormControlProps["focused"];
+  children?: MuiSelectProps["children"];
 }
 
 export default function Select(props: SelectProps) {
-  const { value, options, defaultValue, error, focused, open } = props;
-  const Icon = (props: any) => <IconKeyboardArrowDown {...props} />;
+  const { value, children, defaultValue, error, focused, open, ...rest } =
+    props;
+  const Icon = (props: JSX.Element) => <IconKeyboardArrowDown {...props} />;
   const theme = useTheme();
 
   const StyledMenuProps = {
     PaperProps: {
       sx: {
-        "& .MuiList-root": {
-          width: "calc(100% - 4px)",
+        "&.MuiPaper-root": {
           border: `solid 2px ${theme.palette.primary.main}`,
           borderTop: 0,
           borderRadius: 1,
           borderTopLeftRadius: 0,
           borderTopRightRadius: 0,
+          marginTop: theme.spacing(1),
         },
       },
     },
@@ -54,12 +50,9 @@ export default function Select(props: SelectProps) {
         defaultValue={defaultValue}
         open={open}
         className={open ? "Mui-open" : ""}
+        {...rest}
       >
-        {options?.map((option: any) => (
-          <MenuItem key={option.key} value={option.key || ""}>
-            {option.value}
-          </MenuItem>
-        ))}
+        {children}
       </StyledSelect>
     </FormControl>
   );
