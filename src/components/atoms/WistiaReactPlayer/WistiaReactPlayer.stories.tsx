@@ -4,7 +4,7 @@ import { ComponentStory, ComponentMeta } from "@storybook/react";
 import WistiaReactPlayer from "./WistiaReactPlayer";
 
 export default {
-  title: "Components/Atoms/Video",
+  title: "Components/atoms/Video",
   component: WistiaReactPlayer,
 } as ComponentMeta<typeof WistiaReactPlayer>;
 
