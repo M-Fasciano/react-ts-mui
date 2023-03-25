@@ -7,7 +7,7 @@ const StyledWrapper = styled("div")`
   flex-direction: column;
   width: 100%;
 
-  @media (min-width: 1024px) {
+  ${({ theme }) => theme.breakpoints.up("md")} {
     flex-direction: row;
   }
 `;
