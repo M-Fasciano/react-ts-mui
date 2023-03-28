@@ -1,3 +1,4 @@
+import React from "react";
 import Heading from "../atoms/Heading";
 import { ThemeProvider } from "@mui/material";
 import { theme } from "../../stories/Typography/Typography.style";

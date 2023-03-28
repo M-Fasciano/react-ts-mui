@@ -1,3 +1,4 @@
+import React from "react";
 import { TextFieldProps as MuiTextFieldProps } from "@mui/material";
 import { StyledTextArea } from "./Textarea.style";
 export interface TextAreaProps {
