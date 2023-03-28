@@ -1,3 +1,4 @@
+import React from "react";
 import { Dayjs } from "dayjs";
 import dayjs from "dayjs";
 import { useEffect, useState } from "react";
@@ -81,6 +82,7 @@ const ReminderPage = () => {
       setHasPhone(true);
       setHasEmail(true);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasEmail, hasPhone]);
 
   useEffect(() => {

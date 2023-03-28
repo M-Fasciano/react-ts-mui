@@ -1,3 +1,4 @@
+import React from "react";
 import SignUp from "../molecules/SignUp";
 import SignIn from "../molecules/SignIn";
 import styled from "styled-components";
