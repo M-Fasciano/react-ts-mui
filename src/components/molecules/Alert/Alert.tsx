@@ -1,3 +1,4 @@
+import React from "react";
 import { AlertProps as MuiAlertProps, Typography } from "@mui/material";
 import { StyledAlert } from "./Alert.style";
 

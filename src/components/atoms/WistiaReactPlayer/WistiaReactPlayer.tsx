@@ -1,3 +1,4 @@
+import React from "react";
 import ReactPlayer from "react-player/wistia";
 import { VideoProps } from "../../pages/Video";
 import { StyledVideoWrapper } from "./WistiaReactPlayer.styles";

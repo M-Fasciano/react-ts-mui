@@ -1,3 +1,4 @@
+import React from "react";
 import { FormLabelProps as MuiFormLabelProps } from "@mui/material";
 import { Typography } from "@mui/material";
 import { StyledLabel } from "./FormLabel.style";
