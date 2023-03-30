@@ -40,15 +40,15 @@ function ToggleLayout() {
         ""
       )}
       <StyledWrapper className={selected && !isTablet ? "active" : ""}>
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
-        <Box />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
+        <Box children={undefined} />
       </StyledWrapper>
     </>
   );
