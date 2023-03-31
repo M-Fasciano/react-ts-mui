@@ -1,30 +1,30 @@
 import React from "react";
+import { ButtonProps as MuiButtonProps } from "@mui/material";
 import { StyledButton } from "./Button.style";
-import { ButtonProps } from "./Button.types";
+export interface ButtonProps {
+  onClick?: MuiButtonProps["onClick"];
+  children?: MuiButtonProps["children"];
+  href?: MuiButtonProps["href"];
+  variant?: MuiButtonProps["variant"];
+  color?: MuiButtonProps["color"];
+  size?: MuiButtonProps["size"];
+  disabled?: MuiButtonProps["disabled"];
+  className?: MuiButtonProps["className"];
+  icon?: MuiButtonProps["startIcon"]; //  Aliased to startIcon since we only have icon
+  type?: MuiButtonProps["type"];
+  name?: MuiButtonProps["name"];
+  label?: string;
+}
 
-/**
- * Primary UI component for user interaction
- */
-const Button = ({
-  primary = false,
-  backgroundColor,
-  label,
-  type,
-  ...props
-}: ButtonProps) => {
-  const mode = primary
-    ? "storybook-button--primary"
-    : "storybook-button--secondary";
+function Button(props: ButtonProps) {
+  const { children, icon: startIcon, ...rest } = props;
+  const buttonProps = { startIcon, ...rest };
+
   return (
-    <StyledButton
-      type={type}
-      className={["storybook-button", mode].join(" ")}
-      style={{ backgroundColor }}
-      {...props}
-    >
-      {label}
+    <StyledButton disableRipple disableElevation {...buttonProps}>
+      {children}
     </StyledButton>
   );
-};
+}
 
 export default Button;

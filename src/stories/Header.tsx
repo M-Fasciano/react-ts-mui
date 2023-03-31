@@ -68,7 +68,6 @@ export const Header = ({
               type="button"
             />
             <Button
-              primary
               size="small"
               onClick={onCreateAccount}
               label="Sign up"
