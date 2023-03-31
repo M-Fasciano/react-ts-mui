@@ -70,7 +70,7 @@ const SignIn = () => {
           name="password"
           control={control}
         />
-        <Button label="Sign in" primary type="submit" />
+        <Button label="Sign in" type="submit" />
       </StyledForm>
     </StyledFormWrapper>
   );
