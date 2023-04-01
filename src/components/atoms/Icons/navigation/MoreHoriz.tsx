@@ -13,7 +13,7 @@ const SvgMoreHoriz = (props: SvgIconProps) => {
     >
       <path
         d="M6 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Zm12 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Zm-6 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2Z"
-        fill="#000"
+        fill="currentColor"
         fillOpacity={0.54}
       />
     </SvgIcon>

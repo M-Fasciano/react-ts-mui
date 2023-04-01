@@ -13,7 +13,7 @@ const SvgEqualizer = (props: SvgIconProps) => {
     >
       <path
         d="M12 20c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2s-2 .9-2 2v12c0 1.1.9 2 2 2Zm-6 0c1.1 0 2-.9 2-2v-4c0-1.1-.9-2-2-2s-2 .9-2 2v4c0 1.1.9 2 2 2Zm10-9v7c0 1.1.9 2 2 2s2-.9 2-2v-7c0-1.1-.9-2-2-2s-2 .9-2 2Z"
-        fill="#000"
+        fill="currentColor"
         fillOpacity={0.54}
       />
     </SvgIcon>
