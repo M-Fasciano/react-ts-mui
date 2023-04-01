@@ -13,7 +13,7 @@ const SvgFiberManualRecord = (props: SvgIconProps) => {
     >
       <path
         d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"
-        fill="#000"
+        fill="currentColor"
         fillOpacity={0.54}
       />
     </SvgIcon>
