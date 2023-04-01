@@ -13,7 +13,7 @@ const SvgScatterPlot = (props: SvgIconProps) => {
     >
       <path
         d="M7 17a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM11 9a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM16.6 20.6a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z"
-        fill="#000"
+        fill="currentColor"
         fillOpacity={0.54}
       />
     </SvgIcon>

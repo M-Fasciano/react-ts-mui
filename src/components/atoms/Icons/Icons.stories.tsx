@@ -67,8 +67,6 @@ const placesIconsData = Object.values(PlacesIcons);
 const socialIconsData = Object.values(SocialIcons);
 const toggleIconsData = Object.values(ToggleIcons);
 
-console.log({ actionIconsData });
-
 const renderIconList: Function = (data: any[]): JSX.Element[] => {
   return data.map((Icon) => (
     <StyledIcon>

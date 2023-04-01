@@ -40,7 +40,7 @@
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public",
     "test-ct": "playwright test -c playwright-ct.config.ts",
-    "svgr": "svgr --typescript --icon --replace-attr-values 'black=currentColor' --index-template src/components/atoms/Icons/index-template.js --template src/components/atoms/Icons/svg-icon-template.js -d src/components/atoms/Icons -- src/assets",
+    "svgr": "svgr --typescript --icon --replace-attr-values '#000=currentColor' --index-template src/components/atoms/Icons/index-template.js --template src/components/atoms/Icons/svg-icon-template.js -d src/components/atoms/Icons -- src/assets",
     "commit": "cz"
   },
   "eslintConfig": {
