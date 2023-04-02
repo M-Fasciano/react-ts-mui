@@ -16,7 +16,7 @@ export const StyledSecondaryButton = styled(Button)(({ theme }) => ({
 
   //  Outlined Success Variant
   [`&.${MuiButtonClasses.outlinedSuccess}`]: {
-    border: `1px solid ${theme.palette.grey[400]}`,
+    border: `1px solid ${theme.palette.success.main}`,
     "&:hover": {
       backgroundColor: theme.palette.background.paper,
     },
