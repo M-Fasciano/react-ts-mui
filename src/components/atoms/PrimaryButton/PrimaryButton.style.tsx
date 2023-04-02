@@ -7,7 +7,7 @@ export const StyledPrimaryButton = styled(Button)(({ theme }) => ({
     border: "1px solid transparent",
     "&:hover": {
       backgroundColor: theme.palette.action.hover,
-      color: theme.palette.text.primary,
+      color: theme.palette.primary.main,
     },
     "&:disabled": {
       backgroundColor: theme.palette.action.disabled,
@@ -16,7 +16,7 @@ export const StyledPrimaryButton = styled(Button)(({ theme }) => ({
 
   //  Outlined Variant
   [`&.${MuiButtonClasses.outlined}`]: {
-    border: `1px solid ${theme.palette.grey[400]}`,
+    border: `1px solid ${theme.palette.primary.main}`,
     "&:hover": {
       backgroundColor: theme.palette.background.paper,
     },
