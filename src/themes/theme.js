@@ -1,6 +1,124 @@
 import { createTheme } from "@mui/material";
+import { createBreakpoints } from "@mui/system";
+
+const breakpoints = createBreakpoints({
+  values: {
+    xs: 375,
+    sm: 768,
+    md: 1024,
+    lg: 1440,
+    xl: 1920,
+  },
+});
 
 export const theme = createTheme({
+  typography: {
+    fontFamily: '"Open Sans", "Arial", sans-serif',
+    fontWeightRegular: 700,
+    fontSize: 14, // 14 = 1rem (16px)
+    h1: {
+      fontSize: 52,
+      lineHeight: 1.1,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 56,
+      },
+    },
+    h2: {
+      fontSize: 44,
+      lineHeight: 1.1,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 48,
+      },
+    },
+    h3: {
+      fontSize: 32,
+      lineHeight: 1.1,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 36,
+      },
+    },
+    h4: {
+      fontSize: 28,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 32,
+      },
+    },
+    h5: {
+      fontSize: 24,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 28,
+      },
+    },
+    h6: {
+      fontSize: 20,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 24,
+      },
+    },
+    subtitle1: {
+      fontSize: 16,
+      fontWeight: 600,
+      lineHeight: 1.75,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 20,
+      },
+    },
+    subtitle2: {
+      fontSize: 14,
+      fontWeight: 700,
+      lineHeight: 1.75,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 16,
+      },
+    },
+    body1: {
+      fontSize: 14,
+      fontWeight: 400,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 16,
+      },
+    },
+    body2: {
+      fontSize: 12,
+      fontWeight: 400,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 14,
+      },
+    },
+    button: {
+      fontSize: 14,
+      fontWeight: 600,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 16,
+      },
+    },
+    caption: {
+      fontSize: 10,
+      fontWeight: 400,
+      lineHeight: 1.5,
+
+      [breakpoints.up("lg")]: {
+        fontSize: 12,
+      },
+    },
+  },
   palette: {
     mode: "light",
     common: {
