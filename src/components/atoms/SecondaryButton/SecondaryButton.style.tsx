@@ -1,30 +1,30 @@
 import { styled, buttonClasses as MuiButtonClasses } from "@mui/material";
 import Button from "../Button";
 
-export const StyledPrimaryButton = styled(Button)(({ theme }) => ({
-  //  Contained Primary Variant
-  [`&.${MuiButtonClasses.containedPrimary}`]: {
+export const StyledSecondaryButton = styled(Button)(({ theme }) => ({
+  //  Contained Success Variant
+  [`&.${MuiButtonClasses.containedSuccess}`]: {
     border: "1px solid transparent",
+    color: theme.palette.common.white,
     "&:hover": {
-      backgroundColor: theme.palette.action.hover,
-      color: theme.palette.primary.main,
+      backgroundColor: theme.palette.success,
     },
     "&:disabled": {
       backgroundColor: theme.palette.action.disabled,
     },
   },
 
-  //  Outlined Variant
-  [`&.${MuiButtonClasses.outlined}`]: {
-    border: `1px solid ${theme.palette.primary.main}`,
+  //  Outlined Success Variant
+  [`&.${MuiButtonClasses.outlinedSuccess}`]: {
+    border: `1px solid ${theme.palette.success.main}`,
     "&:hover": {
       backgroundColor: theme.palette.background.paper,
     },
     "&:focus": {
-      backgroundColor: theme.palette.background.default,
+      borderColor: theme.palette.background.default,
     },
     "&:disabled": {
-      border: `1px solid ${theme.palette.action.disabled}`,
+      borderColor: theme.palette.action.disabled,
     },
   },
 
