@@ -7,7 +7,13 @@ import {
 export const StyledAlert = styled(MuiAlert)(({ theme }) => ({
   [`&.${MuiAlertClasses.root}`]: {
     borderRadius: 0,
+    backgroundColor: theme.palette.info.light,
     padding: theme.spacing(2),
+
+    a: {
+      color: "inherit",
+      textDecorationColor: "inherit",
+    },
   },
 
   [`& .${MuiAlertClasses.icon}`]: {

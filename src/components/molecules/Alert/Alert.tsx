@@ -5,7 +5,7 @@ import { StyledAlert } from "./Alert.style";
 export interface AlertProps {
   severity: MuiAlertProps["severity"];
   title?: string;
-  message: string;
+  message: string | React.ReactNode;
 }
 
 function Alert(props: AlertProps) {
