@@ -42,7 +42,7 @@ export const StyledBoxHeaderBodyRight = styled("div", {
 })(({ theme }) => ({
   display: "flex",
   justifyContent: "center",
-  gap: theme.spacing(4),
+  gap: theme.spacing(2),
 
   [theme.breakpoints.up("md")]: {
     alignItems: "center",

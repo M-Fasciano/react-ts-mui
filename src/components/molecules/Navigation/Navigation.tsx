@@ -20,6 +20,9 @@ function Navigation() {
         <StyledListItem>
           <Link to="/reminder">Reminder</Link>
         </StyledListItem>
+        <StyledListItem>
+          <Link to="/orders">Orders</Link>
+        </StyledListItem>
       </StyledList>
     </StyledNav>
   );

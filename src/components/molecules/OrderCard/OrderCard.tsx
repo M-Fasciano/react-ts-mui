@@ -47,6 +47,12 @@ const OrderCard = (props: OrderCardProps) => {
 
   const { isDesktop } = useBreakpoints();
 
+  const renderButtons = (
+    <StyledBoxHeaderBodyRight>
+      {buttons.map((button) => button)}
+    </StyledBoxHeaderBodyRight>
+  );
+
   const renderOrderCard = (
     <Box variant="light" withBorder>
       <StyledBoxInner>
@@ -65,13 +71,7 @@ const OrderCard = (props: OrderCardProps) => {
               {orderNumber} {id}
             </Typography>
           </StyledBoxHeaderBodyLeft>
-          {isDesktop ? (
-            <StyledBoxHeaderBodyRight>
-              {buttons.map((button) => {
-                return button;
-              })}
-            </StyledBoxHeaderBodyRight>
-          ) : null}
+          {isDesktop ? renderButtons : null}
         </StyledBoxHeader>
 
         {isDesktop && children ? children : <Divider />}
@@ -101,13 +101,7 @@ const OrderCard = (props: OrderCardProps) => {
 
         {!isDesktop && children ? <StyledAlert>{children}</StyledAlert> : null}
 
-        {!isDesktop ? (
-          <StyledBoxHeaderBodyRight>
-            {buttons.map((button) => {
-              return button;
-            })}
-          </StyledBoxHeaderBodyRight>
-        ) : null}
+        {!isDesktop ? renderButtons : null}
       </StyledBoxInner>
     </Box>
   );
