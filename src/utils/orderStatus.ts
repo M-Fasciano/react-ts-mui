@@ -1,6 +1,6 @@
 import { theme } from "../themes/theme";
 
-const OrderStatuses: any = {
+const OrderStatuses: { [key: string]: string } = {
   M: "Created",
   A: "Pending Payment",
   L: "In Process",
