@@ -18,7 +18,8 @@ export const StyledSecondaryButton = styled(Button)(({ theme }) => ({
   [`&.${MuiButtonClasses.outlinedSuccess}`]: {
     border: `1px solid ${theme.palette.success.main}`,
     "&:hover": {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.success.main,
+      color: theme.palette.common.white,
     },
     "&:focus": {
       borderColor: theme.palette.background.default,
@@ -32,7 +33,7 @@ export const StyledSecondaryButton = styled(Button)(({ theme }) => ({
   [`&.${MuiButtonClasses.text}`]: {
     border: "1px solid transparent",
     "&:hover": {
-      backgroundColor: theme.palette.primary.main,
+      backgroundColor: theme.palette.success.main,
     },
     "&:focus": {
       backgroundColor: theme.palette.action.hover,

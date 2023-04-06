@@ -45,5 +45,9 @@ export const StyledButton = styled(MuiButton, {
   // Text
   [`&.${MuiButtonClasses.text}`]: {
     border: "1px solid transparent",
+
+    "&:hover": {
+      color: theme.palette.common.white,
+    },
   },
 }));
