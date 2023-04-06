@@ -6,7 +6,7 @@ export const StyledBoxInner = styled("div", {
   slot: "BoxInner",
 })(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
-    padding: theme.spacing(0, 2),
+    padding: theme.spacing(1),
   },
 }));
 

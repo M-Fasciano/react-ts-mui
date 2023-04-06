@@ -18,7 +18,8 @@ export const StyledPrimaryButton = styled(Button)(({ theme }) => ({
   [`&.${MuiButtonClasses.outlined}`]: {
     border: `1px solid ${theme.palette.primary.main}`,
     "&:hover": {
-      backgroundColor: theme.palette.background.paper,
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.common.white,
     },
     "&:focus": {
       backgroundColor: theme.palette.background.default,
