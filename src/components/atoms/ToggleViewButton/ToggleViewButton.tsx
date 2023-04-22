@@ -1,3 +1,4 @@
+import React from "react";
 import { ButtonProps } from "../../pages/ToggleLayout";
 import { IconViewList, IconViewModule } from "../Icons/action";
 import { StyledButtonWrapper } from "./ToggleViewButton.style";
