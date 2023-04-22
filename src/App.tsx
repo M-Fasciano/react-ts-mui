@@ -1,21 +1,25 @@
-import * as React from "react";
-import { ThemeProvider, Typography } from "@mui/material";
-import { theme } from "./stories/Typography/Typography.style";
-import Button from "./Components/UI/Atoms/Button";
+import { Route, Routes } from "react-router-dom";
+import Navigation from "./components/molecules/Navigation";
+import Heading from "./components/pages/Heading";
+import Login from "./components/pages/Login";
+import Reminder from "./components/pages/Reminder";
+import ToggleLayout from "./components/pages/ToggleLayout";
+import Video from "./components/pages/Video";
+import Orders from "./components/pages/Orders";
 
 function App() {
   return (
-    <div>
-      <Button primary size="large" label={"Hello world"} />
-      <ThemeProvider theme={theme}>
-        <Typography variant="h1">H1 Example</Typography>
-        <Typography variant="h2">H2 Example</Typography>
-        <Typography variant="h3">H3 Example</Typography>
-        <Typography variant="h4">H4 Example</Typography>
-        <Typography variant="h5">H5 Example</Typography>
-        <Typography variant="h6">H6 Example</Typography>
-      </ThemeProvider>
-    </div>
+    <>
+      <Navigation />
+      <Routes>
+        <Route path="login" element={<Login />} />
+        <Route path="video" element={<Video />} />
+        <Route path="layout" element={<ToggleLayout />} />
+        <Route path="heading" element={<Heading />} />
+        <Route path="reminder" element={<Reminder />} />
+        <Route path="orders" element={<Orders />} />
+      </Routes>
+    </>
   );
 }
 

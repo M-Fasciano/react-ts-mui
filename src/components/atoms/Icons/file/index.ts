@@ -1,0 +1,12 @@
+export { default as IconAttachment } from "./Attachment";
+export { default as IconCloudCircle } from "./CloudCircle";
+export { default as IconCloudDone } from "./CloudDone";
+export { default as IconCloudDownload } from "./CloudDownload";
+export { default as IconCloudOff } from "./CloudOff";
+export { default as IconCloudQueue } from "./CloudQueue";
+export { default as IconCloudUpload } from "./CloudUpload";
+export { default as IconCloud } from "./Cloud";
+export { default as IconCreateNewFolder } from "./CreateNewFolder";
+export { default as IconFolderOpen } from "./FolderOpen";
+export { default as IconFolderShared } from "./FolderShared";
+export { default as IconFolder } from "./Folder";
