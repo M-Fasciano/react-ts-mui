@@ -17,7 +17,7 @@ export default {
     link: <Link href="#">Edit</Link>,
     total: "£100",
     buttons: [
-      <PrimaryButton key="1" variant="text">
+      <PrimaryButton key="1" to={""} variant="text">
         View Order
       </PrimaryButton>,
     ],
@@ -34,10 +34,10 @@ export const Created = Template.bind({});
 Created.args = {
   status: statusMap("M") || statusMap("H"),
   buttons: [
-    <PrimaryButton key="1" variant="text">
+    <PrimaryButton key="1" to={""} variant="text">
       View Order
     </PrimaryButton>,
-    <PrimaryButton key="2" name="reOrder">
+    <PrimaryButton key="2" to={""} name="reOrder">
       Reorder in 3 Clicks
     </PrimaryButton>,
   ],
