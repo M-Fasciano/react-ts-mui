@@ -1,3 +1,4 @@
+import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navigation from "./components/molecules/Navigation";
 import Heading from "./components/pages/Heading";
@@ -6,6 +7,7 @@ import Reminder from "./components/pages/Reminder";
 import ToggleLayout from "./components/pages/ToggleLayout";
 import Video from "./components/pages/Video";
 import Orders from "./components/pages/Orders";
+import Pagination from "./components/pages/Pagination";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
         <Route path="heading" element={<Heading />} />
         <Route path="reminder" element={<Reminder />} />
         <Route path="orders" element={<Orders />} />
+        <Route path="pagination" element={<Pagination />} />
       </Routes>
     </>
   );

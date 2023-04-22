@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import { StyledList, StyledListItem, StyledNav } from "./Navigation.style";
 
@@ -22,6 +23,9 @@ function Navigation() {
         </StyledListItem>
         <StyledListItem>
           <Link to="/orders">Orders</Link>
+        </StyledListItem>
+        <StyledListItem>
+          <Link to="/pagination">Pagination</Link>
         </StyledListItem>
       </StyledList>
     </StyledNav>
