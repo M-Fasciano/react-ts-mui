@@ -12,6 +12,7 @@ const StyledWrapper = styled("div")`
 
   ${({ theme }) => theme.breakpoints.up("md")} {
     grid-template-columns: repeat(3, 1fr);
+    min-height: 75vh;
   }
 
   &.active {
@@ -40,15 +41,15 @@ function ToggleLayout() {
         ""
       )}
       <StyledWrapper className={selected && !isTablet ? "active" : ""}>
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
-        <Box children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
+        <Box variant="dark" children={undefined} />
       </StyledWrapper>
     </>
   );

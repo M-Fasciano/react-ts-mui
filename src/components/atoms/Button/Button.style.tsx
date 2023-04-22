@@ -16,7 +16,7 @@ export const StyledButton = styled(MuiButton, {
   //  Medium size
   [`&.${MuiButtonClasses.sizeMedium}`]: {
     border: "1px solid transparent",
-    padding: theme.spacing(1, 2),
+    padding: theme.spacing(1.5, 2),
   },
 
   //  Large size (set the same as medium since the DS doesn't have a large size)
