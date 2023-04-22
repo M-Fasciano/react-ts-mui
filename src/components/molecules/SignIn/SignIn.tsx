@@ -70,7 +70,14 @@ const SignIn = () => {
           name="password"
           control={control}
         />
-        <Button label="Sign in" type="submit" />
+        <Button
+          variant="contained"
+          onClick={() => {}}
+          size="medium"
+          type="submit"
+        >
+          Sign in
+        </Button>
       </StyledForm>
     </StyledFormWrapper>
   );

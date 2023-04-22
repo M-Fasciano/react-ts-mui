@@ -113,7 +113,14 @@ const SignUp = () => {
           name="password"
           control={control}
         />
-        <Button label="Create an account" type="submit" />
+        <Button
+          variant="contained"
+          onClick={() => {}}
+          size="medium"
+          type="submit"
+        >
+          Create an account
+        </Button>
       </StyledForm>
     </StyledFormWrapper>
   );

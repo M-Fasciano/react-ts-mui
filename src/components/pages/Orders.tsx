@@ -28,7 +28,7 @@ type OrderDataProps = {
 
 const renderOrder = (props: OrderDataProps) => {
   const { status } = props;
-  const children = [];
+  const children: any[] = [];
 
   if (status.label === "Created") {
     children.push(
@@ -49,16 +49,16 @@ const renderOrder = (props: OrderDataProps) => {
 
 const renderButtons = (props: OrderDataProps) => {
   const { reOrder } = props;
-  const buttons = [];
+  const buttons: any[] = [];
 
   buttons.push(
-    <PrimaryButton href="#" variant="text">
+    <PrimaryButton to="" variant="text">
       View Order
     </PrimaryButton>
   );
 
   if (reOrder) {
-    buttons.push(<PrimaryButton href="#">Reorder in 3 Clicks</PrimaryButton>);
+    buttons.push(<PrimaryButton to="">Reorder in 3 Clicks</PrimaryButton>);
   }
 
   return buttons;
