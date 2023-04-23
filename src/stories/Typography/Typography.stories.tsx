@@ -1,3 +1,4 @@
+import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
 import Typography from "@mui/material/Typography";
 import { Stack } from "@mui/material";
