@@ -39,7 +39,6 @@ const SignIn = () => {
               {...rest}
               inputRef={ref}
               label="Email Address"
-              variant="outlined"
               type="email"
               fullWidth
               required
@@ -59,7 +58,6 @@ const SignIn = () => {
               {...rest}
               inputRef={ref}
               label="Password"
-              variant="outlined"
               type="password"
               fullWidth
               required

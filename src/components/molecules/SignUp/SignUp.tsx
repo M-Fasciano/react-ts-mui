@@ -42,7 +42,6 @@ const SignUp = () => {
               {...rest}
               inputRef={ref}
               label="Email Address"
-              variant="outlined"
               type="email"
               fullWidth
               required
@@ -62,7 +61,6 @@ const SignUp = () => {
               {...rest}
               inputRef={ref}
               label="First Name"
-              variant="outlined"
               fullWidth
               inputProps={{ maxLength: 20 }}
               required
@@ -82,7 +80,6 @@ const SignUp = () => {
               {...rest}
               inputRef={ref}
               label="Last Name"
-              variant="outlined"
               fullWidth
               inputProps={{ maxLength: 20 }}
               required
@@ -102,7 +99,6 @@ const SignUp = () => {
               {...rest}
               inputRef={ref}
               label="Password"
-              variant="outlined"
               type="password"
               fullWidth
               required
