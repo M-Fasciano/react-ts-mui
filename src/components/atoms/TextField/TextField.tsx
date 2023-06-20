@@ -1,11 +1,11 @@
 import React from "react";
+import { StyledTextField, StyledInputAdornment } from "./TextField.style";
 import {
   InputAdornmentProps as MuiInputAdornmentProps,
   TextFieldProps as MuiTextFieldProps,
 } from "@mui/material";
-import { StyledInputAdornment, StyledTextField } from "./TextField.style";
 
-type TextFieldProps = {
+export interface TextFieldProps {
   ref?: MuiTextFieldProps["ref"];
   name?: MuiTextFieldProps["name"];
   id?: MuiTextFieldProps["id"];
@@ -18,21 +18,26 @@ type TextFieldProps = {
   multiline?: MuiTextFieldProps["multiline"];
   placeholder?: MuiTextFieldProps["placeholder"];
   minRows?: MuiTextFieldProps["minRows"];
-  inputRef?: MuiTextFieldProps["inputRef"];
-  label?: MuiTextFieldProps["label"];
-  variant?: MuiTextFieldProps["variant"];
-  fullWidth?: MuiTextFieldProps["fullWidth"];
-  required?: MuiTextFieldProps["required"];
-  inputProps?: MuiTextFieldProps["inputProps"];
   icon?: JSX.Element;
   iconPosition?: "left" | "right";
-  type?: MuiTextFieldProps["type"];
-  rows?: MuiTextFieldProps["rows"];
   prefix?: JSX.Element | string;
   suffix?: JSX.Element | string;
-};
+  type?: MuiTextFieldProps["type"];
+  rows?: MuiTextFieldProps["rows"];
+  fullWidth?: MuiTextFieldProps["fullWidth"];
+  inputRef?: MuiTextFieldProps["inputRef"];
+  required?: MuiTextFieldProps["required"];
+  label?: MuiTextFieldProps["label"];
+  isPristine?: boolean;
+  select?: MuiTextFieldProps["select"];
+  InputLabelProps?: MuiTextFieldProps["InputLabelProps"];
+  inputProps?: MuiTextFieldProps["inputProps"];
+  showValidationstatus?: boolean;
+  onKeyDown?: MuiTextFieldProps["onKeyDown"];
+  autoComplete?: MuiTextFieldProps["autoComplete"];
+}
 
-const TextField = (props: TextFieldProps) => {
+function TextField(props: TextFieldProps) {
   const { icon, iconPosition = "left", prefix, suffix, ...rest } = props;
 
   const createInputProps = (
@@ -76,6 +81,6 @@ const TextField = (props: TextFieldProps) => {
   };
 
   return <StyledTextField {...textFieldProps} />;
-};
+}
 
 export default TextField;

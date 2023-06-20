@@ -10,7 +10,7 @@ import {
 
 export const StyledTextField = styled(MuiTextField)(({ theme }) => ({
   [`& .${MuiInputBaseClasses.root}`]: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(1),
   },
 
   [`& .${MuiInputBaseClasses.input}`]: {
@@ -19,6 +19,14 @@ export const StyledTextField = styled(MuiTextField)(({ theme }) => ({
 
   [`& .${MuiOutlinedInputClasses.notchedOutline}`]: {
     borderColor: theme.palette.primary.main,
+  },
+
+  [`& .MuiFormLabel-root`]: {
+    transform: "translate(14px, 10px) scale(1)",
+  },
+
+  [`& .MuiInputLabel-shrink`]: {
+    transform: "translate(14px, -9px) scale(0.75)",
   },
 }));
 
