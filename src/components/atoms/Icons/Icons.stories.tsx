@@ -14,6 +14,7 @@ import * as ImageIcons from "./image/index";
 import * as MapsIcons from "./maps/index";
 import * as NavigationIcons from "./navigation/index";
 import * as NotificationIcons from "./notification/index";
+import * as PaymentIcons from "./payment/index";
 import * as PlacesIcons from "./places/index";
 import * as SocialIcons from "./social/index";
 import * as ToggleIcons from "./toggle/index";
@@ -63,6 +64,7 @@ const imageIconsData = Object.values(ImageIcons);
 const mapsIconsData = Object.values(MapsIcons);
 const navigationIconsData = Object.values(NavigationIcons);
 const notificationIconsData = Object.values(NotificationIcons);
+const paymentIconsData = Object.values(PaymentIcons);
 const placesIconsData = Object.values(PlacesIcons);
 const socialIconsData = Object.values(SocialIcons);
 const toggleIconsData = Object.values(ToggleIcons);
@@ -115,6 +117,9 @@ const TemplateNavigation: ComponentStory<typeof IconWrapper> = () =>
 const TemplateNotification: ComponentStory<typeof IconWrapper> = () =>
   renderIconList(notificationIconsData);
 
+const TemplatePayment: ComponentStory<typeof IconWrapper> = () =>
+  renderIconList(paymentIconsData);
+
 const TemplatePlaces: ComponentStory<typeof IconWrapper> = () =>
   renderIconList(placesIconsData);
 
@@ -137,6 +142,7 @@ export const Image = TemplateImage.bind({});
 export const Maps = TemplateMaps.bind({});
 export const Navigation = TemplateNavigation.bind({});
 export const Notification = TemplateNotification.bind({});
+export const Payment = TemplatePayment.bind({});
 export const Places = TemplatePlaces.bind({});
 export const Social = TemplateSocial.bind({});
 export const Toggle = TemplateToggle.bind({});
