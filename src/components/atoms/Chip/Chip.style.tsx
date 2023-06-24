@@ -7,28 +7,26 @@ import {
 export const StyledChip = styled(MuiChip, {
   name: "Chip",
   slot: "Chip",
-})(({ theme }) => ({
+  shouldForwardProp: (prop) => prop !== "isActive",
+})<{ isActive?: boolean }>(({ theme, isActive }) => ({
   [`&.${MuiChipClasses.root}`]: {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: isActive
+      ? theme.palette.grey[300]
+      : theme.palette.common.white,
     borderRadius: theme.spacing(20),
-    border: `1px solid ${theme.palette.grey[300]}`,
+    border: `1px solid ${theme.palette.grey[400]}`,
     cursor: "pointer",
     fontSize: "10px",
     lineHeight: "150%",
-    padding: theme.spacing(3.75, 6),
+    padding: theme.spacing(0, 2),
     transition: "none",
 
     [theme.breakpoints.up("md")]: {
       fontSize: "16px",
-      padding: theme.spacing(3.5, 8),
-    },
-
-    "&.selected": {
-      backgroundColor: theme.palette.primary.main,
     },
 
     "&:hover": {
-      backgroundColor: theme.palette.primary.dark,
+      backgroundColor: theme.palette.grey[100],
     },
 
     "&:active": {
@@ -51,7 +49,7 @@ export const StyledChip = styled(MuiChip, {
   [`.${MuiChipClasses.deleteIcon}`]: {
     color: theme.palette.text.primary,
     fontSize: "24px",
-    margin: theme.spacing(0, -2, 0, 4),
+    margin: theme.spacing(0, 0, 0, 1),
 
     "&:hover": {
       color: theme.palette.text.primary,
@@ -59,7 +57,7 @@ export const StyledChip = styled(MuiChip, {
   },
 
   [`&.${MuiChipClasses.deletable}`]: {
-    backgroundColor: theme.palette.primary.main,
+    backgroundColor: theme.palette.grey[300],
   },
 }));
 
@@ -69,5 +67,5 @@ export const StyledChipWrapper = styled("div", {
 })(({ theme }) => ({
   display: "flex",
   flexWrap: "wrap",
-  gap: theme.spacing(4),
+  gap: theme.spacing(1),
 }));

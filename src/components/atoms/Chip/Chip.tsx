@@ -19,7 +19,7 @@ function Chip(props: ChipProps) {
       label={option}
       onClick={onClick ? onClick : undefined}
       onDelete={onDelete ? onDelete : undefined}
-      className={isActive ? "selected" : undefined}
+      isActive={isActive}
       disabled={disabled}
     />
   );
