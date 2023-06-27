@@ -1,24 +1,14 @@
 import React from "react";
 import SignUp from "../molecules/SignUp";
 import SignIn from "../molecules/SignIn";
-import styled from "styled-components";
-
-const StyledWrapper = styled("div")`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  ${({ theme }) => theme.breakpoints.up("md")} {
-    flex-direction: row;
-  }
-`;
+import DynamicColumns from "../layouts/DynamicColumns";
 
 function Login() {
   return (
-    <StyledWrapper>
+    <DynamicColumns columnWidths={[50, 50]}>
       <SignUp />
       <SignIn />
-    </StyledWrapper>
+    </DynamicColumns>
   );
 }
 
