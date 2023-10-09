@@ -1,7 +1,15 @@
 import React from "react";
 import { navigation } from "../../../mocks/navigation";
-import { StyledDrawer, StyledHeader, StyledNavWrapper } from "./Header.styles";
+import {
+  StyledClodeButton,
+  StyledDrawer,
+  StyledHeader,
+  StyledNavWrapper,
+} from "./Header.styles";
 import { renderMenu } from "./helpers/rendetMenu";
+import { IconButton } from "@mui/material";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseButton from "./components/CloseButton";
 
 function Header() {
   const navigationLinks = navigation[0].menu.items;
@@ -20,11 +28,18 @@ function Header() {
     <StyledHeader>
       <StyledNavWrapper>
         <h1>Logo</h1>
-        <button onClick={handleMenuClick}>menu</button>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          onClick={handleMenuClick}
+          edge="start"
+        >
+          <MenuIcon />
+        </IconButton>
       </StyledNavWrapper>
 
       <StyledDrawer open={isMenuOpen} anchor="right">
-        <button onClick={handleMenuClick}>close</button>
+        <CloseButton handleMenuClick={handleMenuClick} />
         {renderMenu({
           navigationLinks,
           handleSubMenuClick,
