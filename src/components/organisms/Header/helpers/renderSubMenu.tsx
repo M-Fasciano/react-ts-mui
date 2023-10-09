@@ -1,5 +1,6 @@
 import Link from "../../../atoms/Link";
 import { StyledDrawer } from "../Header.styles";
+import CloseButton from "../components/CloseButton";
 
 interface renderSubMenuProps {
   subMenu: any;
@@ -14,7 +15,7 @@ export const renderSubMenu = (props: renderSubMenuProps) => {
     <>
       <button onClick={handleSubMenuClick}>{subMenu.title}</button>
       <StyledDrawer open={isSubMenuOpen} anchor="right">
-        <button onClick={handleSubMenuClick}>close</button>
+        <CloseButton handleMenuClick={handleSubMenuClick} />
         <ul>
           {subMenu &&
             subMenu.items.map((item: any, index: string) => {

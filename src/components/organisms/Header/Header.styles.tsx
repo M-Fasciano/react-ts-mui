@@ -1,4 +1,4 @@
-import { Drawer, styled } from "@mui/material";
+import { Drawer, IconButton, styled } from "@mui/material";
 
 export const StyledHeader = styled("header", {
   name: "Header",
@@ -27,4 +27,11 @@ export const StyledDrawer = styled(Drawer, {
     maxWidth: "100%",
     padding: theme.spacing(2, 0),
   },
+}));
+
+export const StyledClodeButton = styled(IconButton, {
+  name: "CloseButton",
+})(({ theme }) => ({
+  alignSelf: "flex-end",
+  marginRight: theme.spacing(1),
 }));
